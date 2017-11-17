@@ -37,6 +37,8 @@ class SearchDashboardModel {
     /// Search for a specific term using Yelps API.
     /// Note: This will automatically request location permission
     final func search(for term: String) {
+        self.uiRefreshHandler?(.loading)
+        
         self.currentSearchTerm = term
         self.locationService.getCurrentLocation { [weak self] (locationDetail) in
             guard let `self` = self else { return }
@@ -64,7 +66,11 @@ class SearchDashboardModel {
                 // Using Sync DispatchQueue to lock mutation on searchResults
                 self.resultsMutationQueue.sync {
                     self.state.allSearchResults.append(contentsOf: results.businesses)
-                    self.uiRefreshHandler?(.newSearchResults)
+                    if self.state.allSearchResults.count > 0 {
+                        self.uiRefreshHandler?(.newSearchResults)
+                    } else {
+                        self.uiRefreshHandler?(.noSearchResultsFound)
+                    }
                 }
             } else {
                 self.uiRefreshHandler?(.noSearchResultsFound)
@@ -83,6 +89,7 @@ extension SearchDashboardModel {
     }
     
     enum UIUpdateType {
+        case loading
         case newSearchResults
         case noSearchResultsFound
         case timeout

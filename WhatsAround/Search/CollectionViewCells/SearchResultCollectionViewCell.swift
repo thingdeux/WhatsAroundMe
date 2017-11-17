@@ -29,7 +29,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.starLabel.text = nil
         self.nameLabel.text = nil
-        self.starLabel.text = nil
         // Make sure to cancel any errant image download tasks that haven't returned in enough
         // Time for the cell to not be re-used under it.
         self.imageView.kf.cancelDownloadTask()
@@ -45,14 +44,15 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     private func setupImage(with url: String) {
         if let url = URL(string: url) {
-            let resizeProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 150, height: 150))
-            self.imageView.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.2)), .processor(resizeProcessor)], progressBlock: nil, completionHandler: nil)
+            self.imageView.kf.setImage(with: url)
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.starLabel.text = nil
+        self.nameLabel.text = nil
+        self.imageView.image = nil
     }
 
 }

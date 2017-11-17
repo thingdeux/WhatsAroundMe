@@ -20,8 +20,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="371" height="354"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Your Business Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="xX1-g9-Ebl" userLabel="NameLabel">
-                        <rect key="frame" x="0.0" y="294.5" width="371" height="59.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Your Business Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="xX1-g9-Ebl" userLabel="NameLabel">
+                        <rect key="frame" x="0.0" y="280.5" width="371" height="73.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" name="PrimaryText"/>
                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="xX1-g9-Ebl" firstAttribute="top" secondItem="X66-KH-7Op" secondAttribute="bottom" constant="-6" id="2IE-Mj-e6W"/>
+                <constraint firstItem="xX1-g9-Ebl" firstAttribute="top" secondItem="X66-KH-7Op" secondAttribute="bottom" constant="-20" id="2IE-Mj-e6W"/>
                 <constraint firstAttribute="trailing" secondItem="BJa-OI-A6b" secondAttribute="trailing" id="2hG-op-dOB"/>
                 <constraint firstAttribute="trailing" secondItem="xX1-g9-Ebl" secondAttribute="trailing" id="4bJ-Kd-kEr"/>
                 <constraint firstItem="X66-KH-7Op" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4nR-r9-k0h"/>

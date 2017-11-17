@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,13 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchDashboardViewController" customModule="WhatsAround" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="xaM-eI-gDf" id="het-ke-seU"/>
+                <outlet property="infoLabel" destination="ogs-V5-Guu" id="kNX-1s-sx2"/>
                 <outlet property="loadingIndicator" destination="Rv5-K2-gnX" id="56W-Fv-0BE"/>
                 <outlet property="searchBar" destination="1i5-ZA-Ge7" id="z9u-ar-2yO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" userLabel="BaseView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -31,7 +31,7 @@
                         <constraint firstAttribute="height" constant="1" id="vGu-ai-zcK"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaM-eI-gDf">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xaM-eI-gDf">
                     <rect key="frame" x="0.0" y="117" width="375" height="695"/>
                     <color key="backgroundColor" name="PrimaryColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z6Z-N1-0cw">
@@ -49,13 +49,21 @@
                     <rect key="frame" x="8" y="52" width="359" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Around You?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="ogs-V5-Guu" userLabel="InfoLabel">
+                    <rect key="frame" x="70" y="392" width="236" height="27.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                    <color key="textColor" name="PrimaryText"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" name="PrimaryColor"/>
             <constraints>
                 <constraint firstItem="xaM-eI-gDf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2WD-Qw-7IQ"/>
+                <constraint firstItem="ogs-V5-Guu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7jE-LJ-n1J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xaM-eI-gDf" secondAttribute="trailing" id="9Qo-iz-TfM"/>
                 <constraint firstItem="Rv5-K2-gnX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9Ti-5o-9qp"/>
                 <constraint firstItem="1i5-ZA-Ge7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ZjT-py-mCs"/>
+                <constraint firstItem="ogs-V5-Guu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fzB-oN-OGz"/>
                 <constraint firstItem="K4H-Fw-MRb" firstAttribute="top" secondItem="1i5-ZA-Ge7" secondAttribute="bottom" constant="8" id="hrd-cg-jcf"/>
                 <constraint firstItem="K4H-Fw-MRb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kII-Ae-BRf"/>
                 <constraint firstItem="xaM-eI-gDf" firstAttribute="top" secondItem="K4H-Fw-MRb" secondAttribute="bottom" id="mE1-AR-yDc"/>
@@ -72,6 +80,9 @@
     <resources>
         <namedColor name="PrimaryColor">
             <color red="0.85100001096725464" green="0.016000000759959221" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryText">
+            <color red="0.92941176470588238" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryText">
             <color red="0.92941176470588238" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
