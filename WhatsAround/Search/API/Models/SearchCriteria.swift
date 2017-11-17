@@ -48,6 +48,6 @@ extension Float {
      */
     var valueAsStars: String {
         let ratingValueRounded = Int(self)
-        return String(repeatElement("⭐️", count: ratingValueRounded))
+        return String(repeatElement("★", count: ratingValueRounded))
     }
 }
