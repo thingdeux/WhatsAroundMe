@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031248FB1FBE8ED100A65F82 /* SearchDashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031248FA1FBE8ED100A65F82 /* SearchDashboardModel.swift */; };
+		031249021FBE976500A65F82 /* SearchDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249011FBE976500A65F82 /* SearchDetailModel.swift */; };
+		031249051FBE978E00A65F82 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249031FBE978E00A65F82 /* SearchDetailViewController.swift */; };
+		031249061FBE978E00A65F82 /* SearchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031249041FBE978E00A65F82 /* SearchDetailViewController.xib */; };
+		031249091FBE9E5800A65F82 /* SearchDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249071FBE9E5800A65F82 /* SearchDashboardViewController.swift */; };
+		0312490A1FBE9E5800A65F82 /* SearchDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031249081FBE9E5800A65F82 /* SearchDashboardViewController.xib */; };
+		0312490C1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312490B1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift */; };
+		031249141FBEC04500A65F82 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249121FBEC04500A65F82 /* SearchResultCollectionViewCell.swift */; };
+		031249151FBEC04500A65F82 /* SearchResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031249131FBEC04500A65F82 /* SearchResultCollectionViewCell.xib */; };
+		031249171FBEC24D00A65F82 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249161FBEC24D00A65F82 /* UIViewController+Extensions.swift */; };
+		031249191FBED5E400A65F82 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249181FBED5E400A65F82 /* LocationService.swift */; };
+		0312491B1FBEDA7C00A65F82 /* SearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312491A1FBEDA7C00A65F82 /* SearchCriteria.swift */; };
 		031B5F4D1FBE716800480A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B5F4C1FBE716800480A6A /* AppDelegate.swift */; };
-		031B5F4F1FBE716800480A6A /* SearchDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B5F4E1FBE716800480A6A /* SearchDashboard.swift */; };
 		031B5F521FBE716800480A6A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031B5F501FBE716800480A6A /* Search.storyboard */; };
 		031B5F541FBE716800480A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031B5F531FBE716800480A6A /* Assets.xcassets */; };
 		031B5F571FBE716800480A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031B5F551FBE716800480A6A /* LaunchScreen.storyboard */; };
@@ -19,9 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031248FA1FBE8ED100A65F82 /* SearchDashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDashboardModel.swift; sourceTree = "<group>"; };
+		031249011FBE976500A65F82 /* SearchDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailModel.swift; sourceTree = "<group>"; };
+		031249031FBE978E00A65F82 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		031249041FBE978E00A65F82 /* SearchDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailViewController.xib; sourceTree = "<group>"; };
+		031249071FBE9E5800A65F82 /* SearchDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDashboardViewController.swift; sourceTree = "<group>"; };
+		031249081FBE9E5800A65F82 /* SearchDashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDashboardViewController.xib; sourceTree = "<group>"; };
+		0312490B1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationControllerViewController.swift; sourceTree = "<group>"; };
+		031249121FBEC04500A65F82 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		031249131FBEC04500A65F82 /* SearchResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCollectionViewCell.xib; sourceTree = "<group>"; };
+		031249161FBEC24D00A65F82 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		031249181FBED5E400A65F82 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0312491A1FBEDA7C00A65F82 /* SearchCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCriteria.swift; sourceTree = "<group>"; };
 		031B5F491FBE716800480A6A /* WhatsAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		031B5F4C1FBE716800480A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		031B5F4E1FBE716800480A6A /* SearchDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDashboard.swift; sourceTree = "<group>"; };
 		031B5F511FBE716800480A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		031B5F531FBE716800480A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		031B5F561FBE716800480A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031249001FBE970200A65F82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				031248FA1FBE8ED100A65F82 /* SearchDashboardModel.swift */,
+				031249011FBE976500A65F82 /* SearchDetailModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0312490D1FBEBCF400A65F82 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				031249121FBEC04500A65F82 /* SearchResultCollectionViewCell.swift */,
+				031249131FBEC04500A65F82 /* SearchResultCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 		031B5F401FBE716800480A6A = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +112,8 @@
 				031B5F531FBE716800480A6A /* Assets.xcassets */,
 				031B5F551FBE716800480A6A /* LaunchScreen.storyboard */,
 				031B5F581FBE716800480A6A /* Info.plist */,
+				0312490B1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift */,
+				031249181FBED5E400A65F82 /* LocationService.swift */,
 			);
 			path = WhatsAround;
 			sourceTree = "<group>";
@@ -79,9 +121,11 @@
 		031B5F5E1FBE719800480A6A /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				031B5F501FBE716800480A6A /* Search.storyboard */,
 				031B5F601FBE71BC00480A6A /* API */,
+				0312490D1FBEBCF400A65F82 /* CollectionViewCells */,
+				031249001FBE970200A65F82 /* Models */,
 				031B5F5F1FBE71B400480A6A /* ViewControllers */,
+				031B5F501FBE716800480A6A /* Search.storyboard */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -89,7 +133,11 @@
 		031B5F5F1FBE71B400480A6A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				031B5F4E1FBE716800480A6A /* SearchDashboard.swift */,
+				031249031FBE978E00A65F82 /* SearchDetailViewController.swift */,
+				031249041FBE978E00A65F82 /* SearchDetailViewController.xib */,
+				031249071FBE9E5800A65F82 /* SearchDashboardViewController.swift */,
+				031249081FBE9E5800A65F82 /* SearchDashboardViewController.xib */,
+				031249161FBEC24D00A65F82 /* UIViewController+Extensions.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +156,7 @@
 			children = (
 				031B5F651FBE720700480A6A /* Business.swift */,
 				031B5F671FBE74E600480A6A /* Location.swift */,
+				0312491A1FBEDA7C00A65F82 /* SearchCriteria.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,8 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				031B5F571FBE716800480A6A /* LaunchScreen.storyboard in Resources */,
+				031249151FBEC04500A65F82 /* SearchResultCollectionViewCell.xib in Resources */,
 				031B5F541FBE716800480A6A /* Assets.xcassets in Resources */,
 				031B5F521FBE716800480A6A /* Search.storyboard in Resources */,
+				031249061FBE978E00A65F82 /* SearchDetailViewController.xib in Resources */,
+				0312490A1FBE9E5800A65F82 /* SearchDashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +314,17 @@
 			files = (
 				031B5F641FBE71FB00480A6A /* SearchService.swift in Sources */,
 				031B5F661FBE720700480A6A /* Business.swift in Sources */,
+				031248FB1FBE8ED100A65F82 /* SearchDashboardModel.swift in Sources */,
+				031249171FBEC24D00A65F82 /* UIViewController+Extensions.swift in Sources */,
+				031249021FBE976500A65F82 /* SearchDetailModel.swift in Sources */,
 				031B5F681FBE74E600480A6A /* Location.swift in Sources */,
-				031B5F4F1FBE716800480A6A /* SearchDashboard.swift in Sources */,
+				0312491B1FBEDA7C00A65F82 /* SearchCriteria.swift in Sources */,
+				031249091FBE9E5800A65F82 /* SearchDashboardViewController.swift in Sources */,
+				031249051FBE978E00A65F82 /* SearchDetailViewController.swift in Sources */,
+				031249191FBED5E400A65F82 /* LocationService.swift in Sources */,
 				031B5F4D1FBE716800480A6A /* AppDelegate.swift in Sources */,
+				0312490C1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift in Sources */,
+				031249141FBEC04500A65F82 /* SearchResultCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E45L9XJM5K;
 				INFOPLIST_FILE = WhatsAround/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.josh.WhatsAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,6 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E45L9XJM5K;
 				INFOPLIST_FILE = WhatsAround/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.josh.WhatsAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
