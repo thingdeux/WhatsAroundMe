@@ -17,15 +17,17 @@ class SearchService: APISearchProcessable {
     func findNearbyBusinesses(_ criteria: SearchCriteria, apiQueue: DispatchQueue = DispatchQueue.global(), completionHandler: @escaping SearchResultsCompletionHandler) {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(Constants.authToken)"]
         let parameters: Parameters = [
+            "term": criteria.searchTerm,
             "latitude": criteria.latitude,
             "longitude": criteria.longitude,
             "offset": criteria.offset,
             "limit": SearchCriteria.Constants.maxResultsPerCall,
-            "radius": SearchCriteria.Constants.maxRadiusInMeters
+            "radius": SearchCriteria.Constants.maxRadiusInMeters,
         ]
         let searchUrl = Constants.Urls.baseUrl + Constants.Urls.businessSearchEndpoint
-        let request = Alamofire.request(searchUrl, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        let request = Alamofire.request(searchUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         
+        // TODO: Gracefully Handle any failures - retry?
         request.responseData(queue: apiQueue) { (response) in
             if let json = response.result.value {
                 do {

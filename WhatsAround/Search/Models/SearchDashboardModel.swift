@@ -38,7 +38,8 @@ class SearchDashboardModel {
     /// Note: This will automatically request location permission
     final func search(for term: String) {
         self.currentSearchTerm = term
-        self.locationService.getCurrentLocation { (locationDetail) in
+        self.locationService.getCurrentLocation { [weak self] (locationDetail) in
+            guard let `self` = self else { return }
             switch (locationDetail) {
             case .authorized(let location):
                 let searchCriteria = SearchCriteria(searchTerm: term, latitude: location.coordinate.latitude, longitude:location.coordinate.longitude, offset: self.currentOffset)
@@ -56,7 +57,8 @@ class SearchDashboardModel {
     /// Search for Nearby Businesses
     private final func search(_ criteria: SearchCriteria) {
         self.state.allSearchResults.removeAll()
-        self.searchService.findNearbyBusinesses(criteria, apiQueue: self.apiQueue) { (results) in
+        self.searchService.findNearbyBusinesses(criteria, apiQueue: self.apiQueue) { [weak self] (results) in
+            guard let `self` = self else { return }
             if let results = results {
                 // Using Sync DispatchQueue to lock mutation on searchResults
                 self.resultsMutationQueue.sync {

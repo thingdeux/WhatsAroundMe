@@ -10,7 +10,7 @@ import CoreLocation
 
 class LocationService: NSObject {
     private let locationManager = CLLocationManager()
-    private let currentLocationPermission: CLAuthorizationStatus = .notDetermined
+    private var currentLocationPermission: CLAuthorizationStatus = .notDetermined
     private var locationRetrievedHandler: LocationRetrievalHandler?
     
     typealias LocationRetrievalHandler = (_ location: LocationDetail) -> Void
@@ -29,7 +29,16 @@ class LocationService: NSObject {
     
     func getCurrentLocation(_ handler: @escaping LocationRetrievalHandler) {
         self.locationRetrievedHandler = handler
-        self.locationManager.requestWhenInUseAuthorization()
+        
+        // If we already have permission to use CoreLocation - request the location, if not prompt for permission.
+        // The CLLocationManager delegate will handle the rest of the flow.
+        switch (self.currentLocationPermission) {
+            case .authorizedAlways, .authorizedWhenInUse:
+                self.locationManager.requestLocation()
+            default:
+                self.locationManager.requestWhenInUseAuthorization()
+                print("👏🏾 Requesting Location Permission")
+        }
     }
 }
 
@@ -51,11 +60,17 @@ extension LocationService : CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             print("👌🏾🔥 Location permission granted")
             self.locationManager.requestLocation()
+        self.currentLocationPermission = status
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("😤 Location Failed With error \(error)")
+        self.locationRetrievedHandler?(.error)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFinishDeferredUpdatesWithError error: Error?) {
+        print("😤 Location Failed With error \(String(describing: error))")
         self.locationRetrievedHandler?(.error)
     }
 }

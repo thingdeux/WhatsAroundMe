@@ -12,7 +12,7 @@ struct Location : Decodable {
     let city: String
     let country: String
     let state: String
-    let zipCode: String
+    let zip_code: String
     let display_address: [String]
     
     private let address1: String?

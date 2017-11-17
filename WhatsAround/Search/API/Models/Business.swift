@@ -8,21 +8,20 @@
 
 import Foundation
 
-struct SearchResponse : Decodable {
-    var total: Int64
+struct SearchResponse : Decodable {    
     var businesses: [Business]
 }
 
-struct Business: Decodable {
+struct Business: Decodable, SearchResultDisplayable {
     let id: String
-    let rating: Int
+    let rating: Float
     let name: String
     let image_url: String
     let location: Location
     let distance: Double
     private let display_phone: String
     private let is_closed: Bool
-    private let review_count: Int64
+    private let review_count: Int
     
     // Computed Vars using iOS Standard Naming Conventions.
     // Only keeping underscores for is_closed / review_count
@@ -31,7 +30,11 @@ struct Business: Decodable {
         return self.is_closed
     }
     
-    var reviewCount: Int64 {
+    var imageUrl: String {
+        return self.image_url
+    }
+    
+    var reviewCount: Int {
         return self.review_count
     }
     

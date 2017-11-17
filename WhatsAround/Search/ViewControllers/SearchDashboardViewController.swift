@@ -78,12 +78,26 @@ extension SearchDashboardViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.Constants.reuseId, for: indexPath) as? SearchResultCollectionViewCell {
+            if indexPath.row < self.model.state.allSearchResults.count {
+                let displayable = self.model.state.allSearchResults[indexPath.row]
+                cell.setup(with: displayable)
+                return cell
+            }
+        }
         return UICollectionViewCell()
     }
 }
 
 extension SearchDashboardViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+}
+
+extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screen = UIScreen.main.bounds        
+        return CGSize(width: screen.width / 3.5, height: screen.height / 4)
     }
 }
 

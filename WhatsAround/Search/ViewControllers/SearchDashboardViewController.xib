@@ -25,14 +25,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4H-Fw-MRb" userLabel="Spacer">
-                    <rect key="frame" x="16" y="108" width="343" height="1"/>
+                    <rect key="frame" x="16" y="116" width="343" height="1"/>
                     <color key="backgroundColor" name="PrimaryText"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="vGu-ai-zcK"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaM-eI-gDf">
-                    <rect key="frame" x="0.0" y="125" width="375" height="687"/>
+                    <rect key="frame" x="0.0" y="117" width="375" height="695"/>
                     <color key="backgroundColor" name="PrimaryColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z6Z-N1-0cw">
                         <size key="itemSize" width="50" height="50"/>
@@ -41,7 +41,7 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rv5-K2-gnX">
+                <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rv5-K2-gnX">
                     <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
                     <color key="color" name="PrimaryText"/>
                 </activityIndicatorView>
@@ -56,9 +56,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xaM-eI-gDf" secondAttribute="trailing" id="9Qo-iz-TfM"/>
                 <constraint firstItem="Rv5-K2-gnX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9Ti-5o-9qp"/>
                 <constraint firstItem="1i5-ZA-Ge7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ZjT-py-mCs"/>
-                <constraint firstItem="K4H-Fw-MRb" firstAttribute="top" secondItem="1i5-ZA-Ge7" secondAttribute="bottom" id="hrd-cg-jcf"/>
+                <constraint firstItem="K4H-Fw-MRb" firstAttribute="top" secondItem="1i5-ZA-Ge7" secondAttribute="bottom" constant="8" id="hrd-cg-jcf"/>
                 <constraint firstItem="K4H-Fw-MRb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kII-Ae-BRf"/>
-                <constraint firstItem="xaM-eI-gDf" firstAttribute="top" secondItem="K4H-Fw-MRb" secondAttribute="bottom" constant="16" id="mE1-AR-yDc"/>
+                <constraint firstItem="xaM-eI-gDf" firstAttribute="top" secondItem="K4H-Fw-MRb" secondAttribute="bottom" id="mE1-AR-yDc"/>
                 <constraint firstItem="Rv5-K2-gnX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nW8-6X-3gU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K4H-Fw-MRb" secondAttribute="trailing" constant="16" id="rIV-1d-KaA"/>
                 <constraint firstAttribute="trailing" secondItem="1i5-ZA-Ge7" secondAttribute="trailing" constant="8" id="ruB-6D-TrD"/>

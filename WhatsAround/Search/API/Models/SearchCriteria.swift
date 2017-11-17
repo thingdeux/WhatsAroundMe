@@ -30,7 +30,24 @@ struct SearchCriteria {
     }
     
     enum Constants {
-        static let maxRadiusInMeters = 10000 // 6 Miles
-        static let maxResultsPerCall = 100
+        static let maxRadiusInMeters = 40000 // ~25 Miles
+        static let maxResultsPerCall = 50
+    }
+}
+
+extension Float {
+    /*
+     I'm "cheating" here with stars and losing a bit of accuracy
+     The Right way to do this is to allow for half-stars.... this is a hacky
+     Way to do this as I feel like this codebase is already sufficiently bulky and adding more complexity
+     In the event that this is a real task the proper way to do this is to either have star image assets
+     One for a full star and one for a half - and create small collection views under the images counting stars.
+     Depending on performance (may be a bit rough depending on how many cells are on screen at once) a more performant
+     Implementation would be to have an asset for each rating level - ex: One for 1 star, one for 1 and a half stars, 1 for 2 stars....etc
+     As it stands I'm losing half star accuracy and simply making string with star emojis.
+     */
+    var valueAsStars: String {
+        let ratingValueRounded = Int(self)
+        return String(repeatElement("⭐️", count: ratingValueRounded))
     }
 }
