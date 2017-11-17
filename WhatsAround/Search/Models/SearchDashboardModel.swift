@@ -42,7 +42,8 @@ class SearchDashboardModel {
             guard let `self` = self else { return }
             switch (locationDetail) {
             case .authorized(let location):
-                let searchCriteria = SearchCriteria(searchTerm: term, latitude: location.coordinate.latitude, longitude:location.coordinate.longitude, offset: self.currentOffset)
+                let searchCriteria = SearchCriteria(searchTerm: term, latitude: location.coordinate.latitude,
+                                                    longitude:location.coordinate.longitude, sortedBy: .highestRating, offset: self.currentOffset)
                 self.search(searchCriteria)
             case .unknown:
                 self.uiRefreshHandler?(.locationPermissionsDenied)

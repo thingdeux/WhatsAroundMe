@@ -21,6 +21,7 @@ class SearchService: APISearchProcessable {
             "latitude": criteria.latitude,
             "longitude": criteria.longitude,
             "offset": criteria.offset,
+            "sort_by": criteria.sortedBy.rawValue,
             "limit": SearchCriteria.Constants.maxResultsPerCall,
             "radius": SearchCriteria.Constants.maxRadiusInMeters,
         ]
@@ -28,7 +29,7 @@ class SearchService: APISearchProcessable {
         let request = Alamofire.request(searchUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         
         // TODO: Gracefully Handle any failures - retry?
-        request.responseData(queue: apiQueue) { (response) in
+        request.responseData(queue: apiQueue) { (response) in            
             if let json = response.result.value {
                 do {
                     let apiResponse = try JSONDecoder().decode(SearchResponse.self, from: json)

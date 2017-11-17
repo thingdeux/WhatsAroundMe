@@ -39,15 +39,14 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.starLabel.text = result.rating.valueAsStars
             self.nameLabel.text = result.name
-            self.setupImage(with: result.imageUrl)
         }
+        self.setupImage(with: result.imageUrl)
     }
     
     private func setupImage(with url: String) {
         if let url = URL(string: url) {
-            self.imageView.kf.setImage(with: url)
-        } else {
-            // TODO: Placeholder image or just some kind of background fill
+            let resizeProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 150, height: 150))
+            self.imageView.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.2)), .processor(resizeProcessor)], progressBlock: nil, completionHandler: nil)
         }
     }
 

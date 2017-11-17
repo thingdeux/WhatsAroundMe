@@ -40,6 +40,7 @@ class SearchDashboardViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.searchBar.delegate = self
+        self.collectionView.contentInset = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 8.0, right: 16.0)
     }
     
     private func updateUI(for type: SearchDashboardModel.UIUpdateType) {

@@ -17,7 +17,7 @@ struct SearchCriteria {
     let searchTerm: String
     let latitude: Double
     let longitude: Double
-    let sortedBy: SortCriteria = .bestMatch
+    let sortedBy: SortCriteria
     /// Make sure to check the maxResultsPerCall constant in before chunking with offset.
     /// Ideally you should get the next set using the same amounts.
     let offset: Int
