@@ -88,14 +88,13 @@ class SearchDashboardViewController: UIViewController {
                     self.scrollCollectionViewToTop()
                     self.setLoading(false, forceHideInfoLabel: true)
                 }
-                return
             case .loading:
                 self.setLoading(true)
-                return
             case .timeout, .noSearchResultsFound:
                 DispatchQueue.main.async {
                     self.infoLabel.text = "No Results Found"
                 }
+                self.setLoading(false)
             case .locationPermissionsDenied, .errorRetrievingLocationPermissions:
                 // Note: For a real app - this should be handled differently - because you only get one shot to ask the user
                 // For this permission it's better to have a custom view explaining why you need this permission and prevent
@@ -103,16 +102,21 @@ class SearchDashboardViewController: UIViewController {
                 // Comes and you don't have to guide them to settings.
                 // For this test I'm just providing an on-screen prompt.
                 DispatchQueue.main.async {
-                    self.infoLabel.text = "Location Permission Denied, Please Enable in Settings"
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        self.infoLabel.text = "Location Permission Denied"
+                        self.setLoading(false)
+                    })
                 }
         }
-        self.setLoading(false)
+        
     }
     
     private func scrollCollectionViewToTop() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            // Scroll collectionview back to top
-            self.collectionView.setContentOffset(self.collectionView.contentOffset, animated: false)
+        if self.model.state.allSearchResults.count > 0 {
+            DispatchQueue.main.async {
+                let topItem = IndexPath(item: 0, section: 0)
+                self.collectionView.scrollToItem(at: topItem, at: UICollectionViewScrollPosition.top, animated: false)
+            }
         }
     }
 
@@ -152,7 +156,12 @@ extension SearchDashboardViewController : UICollectionViewDelegate {
 extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screen = UIScreen.main.bounds        
-        return CGSize(width: screen.width / 3.5, height: screen.height / 4)
+        return CGSize(width: screen.width / 3.5, height: screen.height / 4.15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        // Want a nice tight fit between cells
+        return -10.0
     }
 }
 

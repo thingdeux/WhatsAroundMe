@@ -38,8 +38,8 @@ class SearchDashboardModel {
     /// Note: This will automatically request location permission
     final func search(for term: String) {
         self.uiRefreshHandler?(.loading)
-        
         self.currentSearchTerm = term
+        
         self.locationService.getCurrentLocation { [weak self] (locationDetail) in
             guard let `self` = self else { return }
             switch (locationDetail) {

@@ -35,6 +35,8 @@ class LocationService: NSObject {
         switch (self.currentLocationPermission) {
             case .authorizedAlways, .authorizedWhenInUse:
                 self.locationManager.requestLocation()
+            case .restricted, .denied:
+                self.locationRetrievedHandler?(.permissionDenied)
             default:
                 self.locationManager.requestWhenInUseAuthorization()
                 print("👏🏾 Requesting Location Permission")
@@ -54,14 +56,16 @@ extension LocationService : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-        case .restricted, .denied, .notDetermined:
+        case .notDetermined:
+            print("🧐 Location Permission Not set")
+        case .restricted, .denied:
             print("😤😭 Location Permission Denied")
             self.locationRetrievedHandler?(.unknown)
         case .authorizedAlways, .authorizedWhenInUse:
             print("👌🏾🔥 Location permission granted")
             self.locationManager.requestLocation()
-        self.currentLocationPermission = status
         }
+        self.currentLocationPermission = status
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
