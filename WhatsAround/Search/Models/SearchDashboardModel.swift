@@ -16,7 +16,7 @@ import CoreLocation
 class SearchDashboardModel {
     typealias UIUpdateHandler = (_ updateType: UIUpdateType) -> Void
     
-    private final let searchService = SearchService()
+    private final let searchService = YelpAPIService()
     private final let locationService = LocationService()
     
     private var currentOffset = 0

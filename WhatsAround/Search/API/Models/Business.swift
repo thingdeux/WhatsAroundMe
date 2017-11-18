@@ -23,6 +23,9 @@ struct Business: Decodable, SearchResultDisplayable {
     private let is_closed: Bool
     private let review_count: Int
     
+    let photos: [String]?
+    var reviews: [Review]
+    
     // Computed Vars using iOS Standard Naming Conventions.
     // Only keeping underscores for is_closed / review_count
     // To save time and not have to implement CodingKeys

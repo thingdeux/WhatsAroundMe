@@ -98,7 +98,7 @@ class SearchDashboardViewController: UIViewController {
             case .locationPermissionsDenied, .errorRetrievingLocationPermissions:
                 // Note: For a real app - this should be handled differently - because you only get one shot to ask the user
                 // For this permission it's better to have a custom view explaining why you need this permission and prevent
-                // Actually having apple pop the permissions alert so that you can be sure the user will accept it when the time
+                // Actually having CoreLocation pop the permissions alert so that you can be sure the user will accept it when the time
                 // Comes and you don't have to guide them to settings.
                 // For this test I'm just providing an on-screen prompt.
                 DispatchQueue.main.async {
@@ -120,15 +120,16 @@ class SearchDashboardViewController: UIViewController {
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
     }
-    */
+    
 }
 
 extension SearchDashboardViewController : UICollectionViewDataSource {
@@ -181,10 +182,3 @@ extension SearchDashboardViewController : UISearchBarDelegate {
         self.resignFirstResponder()
     }
 }
-
-/*
- if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
- 
- }
- 
- */

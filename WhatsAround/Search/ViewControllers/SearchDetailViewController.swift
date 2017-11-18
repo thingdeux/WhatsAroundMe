@@ -9,7 +9,11 @@
 import UIKit
 
 class SearchDetailViewController: UIViewController {
-
+    @IBOutlet fileprivate weak var ratingLabel: UILabel!
+    @IBOutlet fileprivate weak var businessNameLabel: UILabel!
+    @IBOutlet fileprivate weak var iamgeCollectionView: UICollectionView!
+    @IBOutlet fileprivate weak var reviewsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
