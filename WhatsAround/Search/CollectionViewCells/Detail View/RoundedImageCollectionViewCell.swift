@@ -16,7 +16,7 @@ class RoundedImageCollectionViewCell: UICollectionViewCell {
         static let reuseId = "RoundedImageCollectionViewCell"
     }    
 
-    @IBOutlet weak var imageBorder: UIView!
+    @IBOutlet fileprivate weak var imageBorder: UIView!
     @IBOutlet fileprivate weak var roundedImageView: UIImageView!
     
     override func awakeFromNib() {

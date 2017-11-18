@@ -27,7 +27,7 @@ class LocationService: NSObject {
         case authorized(CLLocation)
     }
     
-    func getCurrentLocation(_ handler: @escaping LocationRetrievalHandler) {
+    final func getCurrentLocation(_ handler: @escaping LocationRetrievalHandler) {
         self.locationRetrievedHandler = handler
         
         // If we already have permission to use CoreLocation - request the location, if not prompt for permission.
@@ -37,6 +37,7 @@ class LocationService: NSObject {
                 self.locationManager.requestLocation()
             case .restricted, .denied:
                 self.locationRetrievedHandler?(.permissionDenied)
+                self.locationRetrievedHandler = nil
             default:
                 self.locationManager.requestWhenInUseAuthorization()
                 print("👏🏾 Requesting Location Permission")
@@ -46,12 +47,17 @@ class LocationService: NSObject {
 
 // MARK: Core Location Delegate
 extension LocationService : CLLocationManagerDelegate {
+    // Note: Make sure to clear the locationRetrievedHandler after location status has been passed.
+    // If the app is in the background when location status changes these delegates will be called since the
+    // DashboardModel still has an instance of this service.
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             self.locationRetrievedHandler?(.authorized(location))
         } else {
             self.locationRetrievedHandler?(.unknown)
         }
+        self.locationRetrievedHandler = nil
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -61,6 +67,7 @@ extension LocationService : CLLocationManagerDelegate {
         case .restricted, .denied:
             print("😤😭 Location Permission Denied")
             self.locationRetrievedHandler?(.unknown)
+            self.locationRetrievedHandler = nil
         case .authorizedAlways, .authorizedWhenInUse:
             print("👌🏾🔥 Location permission granted")
             self.locationManager.requestLocation()
@@ -71,11 +78,13 @@ extension LocationService : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("😤 Location Failed With error \(error)")
         self.locationRetrievedHandler?(.error)
+        self.locationRetrievedHandler = nil
     }
     
     func locationManager(_ manager: CLLocationManager, didFinishDeferredUpdatesWithError error: Error?) {
         print("😤 Location Failed With error \(String(describing: error))")
         self.locationRetrievedHandler?(.error)
+        self.locationRetrievedHandler = nil
     }
 }
 

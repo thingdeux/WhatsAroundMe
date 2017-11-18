@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIViewController {
-    func hideKeyboardWhenNotFocusedOnSearchBar() {
+    final func hideKeyboardWhenNotFocusedOnSearchBar() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc final func dismissKeyboard() {
         self.view.endEditing(true)
     } 
 }

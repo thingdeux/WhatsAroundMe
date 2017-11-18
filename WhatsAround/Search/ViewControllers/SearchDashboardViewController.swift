@@ -105,6 +105,7 @@ class SearchDashboardViewController: UIViewController {
                 // Comes and you don't have to guide them to settings.
                 // For this test I'm just providing an on-screen prompt.
                 DispatchQueue.main.async {
+                    self.collectionView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         self.infoLabel.text = "Location Permission Denied"
                         self.setLoading(false)

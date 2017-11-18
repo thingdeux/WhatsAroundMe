@@ -48,10 +48,22 @@ class SearchDashboardModel {
                                                     longitude:location.coordinate.longitude, sortedBy: .highestRating, offset: self.currentOffset)
                 self.search(searchCriteria)
             case .unknown:
+                self.resultsMutationQueue.sync {
+                    self.state.allSearchResults.removeAll()
+                }
+                
                 self.uiRefreshHandler?(.locationPermissionsDenied)
             case .error:
+                self.resultsMutationQueue.sync {
+                    self.state.allSearchResults.removeAll()
+                }
+                
                 self.uiRefreshHandler?(.errorRetrievingLocationPermissions)
             case .permissionDenied:
+                self.resultsMutationQueue.sync {
+                    self.state.allSearchResults.removeAll()
+                }
+                
                 self.uiRefreshHandler?(.locationPermissionsDenied)
             }
         }
@@ -78,11 +90,11 @@ class SearchDashboardModel {
         }
     }
     
-    func setSelectedBusiness(_ business: Business) {
+    final func setSelectedBusiness(_ business: Business) {
         self.state.selectedBusiness = business
     }
     
-    func clearSelectedBusiness() {
+    final func clearSelectedBusiness() {
         self.state.selectedBusiness = nil
     }
 }

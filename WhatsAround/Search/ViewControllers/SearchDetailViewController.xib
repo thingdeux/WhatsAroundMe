@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchDetailViewController" customModule="WhatsAround" customModuleProvider="target">
             <connections>
                 <outlet property="detailCollectionView" destination="clI-b9-6tQ" id="ML7-Ib-8ga"/>
+                <outlet property="loadingSpinner" destination="8Ye-jz-CRu" id="IGd-zR-SFA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,9 +32,14 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-jz-CRu">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" name="SecondaryColor"/>
             <constraints>
+                <constraint firstItem="8Ye-jz-CRu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O4V-hy-9aD"/>
+                <constraint firstItem="8Ye-jz-CRu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mA8-Fh-xCx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="clI-b9-6tQ" secondAttribute="bottom" id="nEw-fo-qnJ"/>
                 <constraint firstItem="clI-b9-6tQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qIX-dP-G1f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="clI-b9-6tQ" secondAttribute="trailing" id="rAu-yw-FIB"/>

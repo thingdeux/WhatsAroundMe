@@ -10,6 +10,8 @@ import UIKit
 
 class SearchDetailViewController: UIViewController {
     @IBOutlet fileprivate weak var detailCollectionView: UICollectionView!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    
     fileprivate var model: SearchDetailModel?
     
     override func viewDidLoad() {
@@ -17,29 +19,54 @@ class SearchDetailViewController: UIViewController {
         self.setupUI()
         
         self.detailCollectionView.register(UINib(nibName: RankedTitleCollectionViewCell.Constants.reuseId, bundle: nil),
-                                           
                                            forCellWithReuseIdentifier: RankedTitleCollectionViewCell.Constants.reuseId)
         
         self.detailCollectionView.register(UINib(nibName: ScrollableImageContainerCollectionViewCell.Constants.reuseId, bundle: nil),
                                            forCellWithReuseIdentifier: ScrollableImageContainerCollectionViewCell.Constants.reuseId)
     }
     
-    private func setupUI() {
+    override func viewWillAppear(_ animated: Bool) {
+        /* When the pushed View Controller is halfway dismissed by sliding away
+           If you let go - the navbar will disappear entirely.  Shifted this here instead
+           of in viewDidLoad to make sure the navigation bar is always available.        
+        */
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func setupUI() {
         self.detailCollectionView.dataSource = self
         self.detailCollectionView.delegate = self
         self.detailCollectionView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0)
+        self.detailCollectionView.alpha = 0
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /// Once all of the data loads - it'll fill in the collection views as requested but it does it
+    /// Quickly and harshly - instead bring the collection view in just as the spinner fades for a smoother transition.
+    private func smoothlyDisplayDetailViews() {
+        DispatchQueue.main.async {
+            self.detailCollectionView.reloadData()
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.loadingSpinner.alpha = 0
+            })
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10, execute: {
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.detailCollectionView.alpha = 1
+                })
+            })
+        }
+    }
+    
+    
     final func setup(with business: Business) {
-        self.model = SearchDetailModel(with: business) {
-            DispatchQueue.main.async {
-                self.detailCollectionView.reloadData()
-            }
+        self.model = SearchDetailModel(with: business) { [weak self] in
+            guard let `self` = self else { return }
+            self.smoothlyDisplayDetailViews()
         }
     }
 }

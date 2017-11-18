@@ -15,10 +15,10 @@ class RankedTitleCollectionViewCell: UICollectionViewCell {
         static let reuseId = "RankedTitleCollectionViewCell"
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var reviewDateLabel: UILabel!
-    @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var reviewDateLabel: UILabel!
+    @IBOutlet fileprivate weak var reviewLabel: UILabel!
+    @IBOutlet fileprivate weak var rankLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
