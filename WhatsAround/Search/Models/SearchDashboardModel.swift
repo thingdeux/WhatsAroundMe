@@ -77,12 +77,22 @@ class SearchDashboardModel {
             }
         }
     }
+    
+    func setSelectedBusiness(_ business: Business) {
+        self.state.selectedBusiness = business
+    }
+    
+    func clearSelectedBusiness() {
+        self.state.selectedBusiness = nil
+    }
 }
 
 // MARK: Convenience Definitions
 extension SearchDashboardModel {
     struct State {
-        var allSearchResults = [Business]()
+        fileprivate(set) var selectedBusiness: Business?
+        fileprivate(set) var allSearchResults = [Business]()
+        
         var openBusinesses: [Business] {
             return self.allSearchResults.filter { $0.isClosed == false }
         }

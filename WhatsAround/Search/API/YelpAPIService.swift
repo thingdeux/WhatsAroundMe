@@ -71,7 +71,7 @@ class YelpAPIService: APISearchProcessable {
      */
     static private func getReviews(for business: Business, apiQueue: DispatchQueue = DispatchQueue.global(), completionHandler: @escaping BusinessDetailsCompletionHandler) {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(Constants.authToken)"]
-        let baseUrl = "\(Constants.Urls.baseUrl)\(Constants.Urls.businessDetailEndpoint)"
+        let baseUrl = "\(Constants.Urls.baseUrl)\(Constants.Urls.businessReviewsEndpoint)"
         let requestUrl = baseUrl.replacingOccurrences(of: "<id>", with: business.id)
         let request = Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
         

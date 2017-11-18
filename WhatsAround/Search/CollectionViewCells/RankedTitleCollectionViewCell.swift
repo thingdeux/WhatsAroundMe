@@ -11,6 +11,10 @@
 import UIKit
 
 class RankedTitleCollectionViewCell: UICollectionViewCell {
+    enum Constants {
+        static let reuseId = "RankedTitleCollectionViewCell"
+    }
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var reviewDateLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
@@ -41,7 +45,7 @@ class RankedTitleCollectionViewCell: UICollectionViewCell {
             self.reviewDateLabel.text = reviewable.reviewDateTime
             self.rankLabel.text = reviewable.reviewRank.valueAsStars
             self.reviewLabel.text = reviewable.reviewText
-            self.titleLabel.text = reviewable.reviewAuthor.name            
+            self.titleLabel.text = reviewable.reviewAuthor.name
         }
     }
     

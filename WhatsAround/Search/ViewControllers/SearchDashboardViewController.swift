@@ -14,10 +14,9 @@ class SearchDashboardViewController: UIViewController {
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet fileprivate weak var searchBar: UISearchBar!
-    @IBOutlet fileprivate weak var infoLabel: UILabel!
+    @IBOutlet fileprivate weak var infoLabel: UILabel!       
     
     private var currentlyLoading: Bool = false
-    
     private let model = SearchDashboardModel()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -129,7 +128,10 @@ class SearchDashboardViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        if let detailViewController = segue.destination as? SearchDetailViewController, let selectedBusiness = self.model.state.selectedBusiness {
+           detailViewController.setup(with: selectedBusiness)
+            self.model.clearSelectedBusiness()
+        }
     }
     
 }
@@ -157,6 +159,8 @@ extension SearchDashboardViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row < self.model.state.allSearchResults.count {
             let business = self.model.state.allSearchResults[indexPath.row]
+            
+            self.model.setSelectedBusiness(business)
             self.performSegue(withIdentifier: "DashboardToDetailSegue", sender: self)
         }
     }

@@ -10,14 +10,22 @@ import UIKit
 
 class ScrollableImageContainerCollectionViewCell: UICollectionViewCell {
     @IBOutlet fileprivate weak var imageCollectionView: UICollectionView!
+    
+    enum Constants {
+        static let reuseId = "ScrollableImageContainerCollectionViewCell"
+        static let screenHeightDivisor: CGFloat = 2.5
+        static let screenWidthDivisor: CGFloat = 1.20
+    }
+    
     fileprivate var imageUrls: [String] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.imageCollectionView.register(UINib(nibName: RoundedImageCollectionViewCell.Constants.reuseid, bundle: nil),
-                                          forCellWithReuseIdentifier: RoundedImageCollectionViewCell.Constants.reuseid)
+        self.imageCollectionView.register(UINib(nibName: RoundedImageCollectionViewCell.Constants.reuseId, bundle: nil),
+                                          forCellWithReuseIdentifier: RoundedImageCollectionViewCell.Constants.reuseId)
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
+        self.imageCollectionView.contentInset = UIEdgeInsetsMake(0, 16, 0, 16)
     }
     
     final func setup(imageUrls: [String]) {
@@ -36,16 +44,17 @@ extension ScrollableImageContainerCollectionViewCell : UICollectionViewDelegate 
 extension ScrollableImageContainerCollectionViewCell : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds
-        return CGSize(width: screenSize.width / 0.4, height: screenSize.height / 4)
+        return CGSize(width: screenSize.width / Constants.screenWidthDivisor, height: screenSize.height / Constants.screenHeightDivisor)
     }
 }
 
 extension ScrollableImageContainerCollectionViewCell : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoundedImageCollectionViewCell.Constants.reuseid, for: indexPath) as? RoundedImageCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoundedImageCollectionViewCell.Constants.reuseId, for: indexPath) as? RoundedImageCollectionViewCell {
             if indexPath.row < self.imageUrls.count {
                 let imageUrl = self.imageUrls[indexPath.row]
                 cell.setup(with: imageUrl)
+                return cell
             }
         }
         return UICollectionViewCell()

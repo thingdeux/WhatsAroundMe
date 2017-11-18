@@ -9,10 +9,14 @@
 class SearchDetailModel {
     private(set) var state: State?
     
-    init(with business: Business) {    
+    init(with business: Business, completionHandler: @escaping EmptyCompletionHandler) {
         YelpAPIService.getDetailedInformation(for: business) { [weak self](business) in
             if let business = business {
                 self?.state = State(business)
+                completionHandler()
+            } else {
+                print("😭 Unable to expand business information")
+                completionHandler()
             }
         }
     }

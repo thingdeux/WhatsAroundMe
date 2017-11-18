@@ -12,9 +12,9 @@ struct ReviewResponse : Decodable {
 
 struct ReviewUser : Decodable {
     let name: String
-    private let image_url: String
+    private let image_url: String?
     
-    var imageUrl: String {
+    var imageUrl: String? {
         return self.image_url
     }
 }

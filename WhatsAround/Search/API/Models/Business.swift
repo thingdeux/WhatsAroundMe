@@ -17,8 +17,7 @@ struct Business: Decodable, SearchResultDisplayable {
     let rating: Float
     let name: String
     let image_url: String
-    let location: Location
-    let distance: Double
+    let location: Location?
     private let display_phone: String
     private let is_closed: Bool
     private let review_count: Int
