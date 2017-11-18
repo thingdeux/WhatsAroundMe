@@ -36,11 +36,6 @@ class ScrollableImageContainerCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension ScrollableImageContainerCollectionViewCell : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-}
-
 extension ScrollableImageContainerCollectionViewCell : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds

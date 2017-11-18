@@ -20,26 +20,26 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-1B-I6W">
-                        <rect key="frame" x="16" y="37" width="340" height="21"/>
+                        <rect key="frame" x="16" y="32.5" width="340" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.85000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="EDN-Xd-5d6">
-                        <rect key="frame" x="16" y="8" width="340" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="16" y="8" width="340" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" name="PrimaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="This is my review, blah blah blah blah blah blah blah blah blah blah blah....etc - Thumbs down" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="JPK-gc-1qq">
-                        <rect key="frame" x="16" y="66" width="340" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="This is my review, blah blah blah blah blah blah blah blah blah blah blah....etc - Thumbs down" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="JPK-gc-1qq">
+                        <rect key="frame" x="16" y="57.5" width="340" height="38.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" name="PrimaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEB. 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01K-MG-2Vj">
-                        <rect key="frame" x="284.5" y="8" width="71.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEB. 17th" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01K-MG-2Vj">
+                        <rect key="frame" x="303" y="8" width="53" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" name="PrimaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -49,9 +49,9 @@
                 <constraint firstItem="EDN-Xd-5d6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="2FZ-yh-J55"/>
                 <constraint firstAttribute="trailing" secondItem="EDN-Xd-5d6" secondAttribute="trailing" constant="16" id="4cw-um-9jB"/>
                 <constraint firstAttribute="trailing" secondItem="MCy-1B-I6W" secondAttribute="trailing" constant="16" id="5A5-b2-h64"/>
-                <constraint firstItem="JPK-gc-1qq" firstAttribute="top" secondItem="MCy-1B-I6W" secondAttribute="bottom" constant="8" id="7tu-3Z-U9b"/>
+                <constraint firstItem="JPK-gc-1qq" firstAttribute="top" secondItem="MCy-1B-I6W" secondAttribute="bottom" constant="4" id="7tu-3Z-U9b"/>
                 <constraint firstItem="EDN-Xd-5d6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="CzQ-xi-Z4D"/>
-                <constraint firstItem="MCy-1B-I6W" firstAttribute="top" secondItem="EDN-Xd-5d6" secondAttribute="bottom" constant="8" id="HOI-O1-9Lg"/>
+                <constraint firstItem="MCy-1B-I6W" firstAttribute="top" secondItem="EDN-Xd-5d6" secondAttribute="bottom" constant="4" id="HOI-O1-9Lg"/>
                 <constraint firstAttribute="trailing" secondItem="01K-MG-2Vj" secondAttribute="trailing" constant="16" id="J70-Cf-9Q3"/>
                 <constraint firstAttribute="trailing" secondItem="JPK-gc-1qq" secondAttribute="trailing" constant="16" id="QRl-XG-t3B"/>
                 <constraint firstItem="JPK-gc-1qq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="SzO-o8-kgN"/>

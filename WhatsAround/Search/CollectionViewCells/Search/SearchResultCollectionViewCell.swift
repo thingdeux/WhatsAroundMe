@@ -16,13 +16,22 @@ protocol SearchResultDisplayable {
 }
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var starLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var starLabel: UILabel!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var borderView: UIView!
     
     enum Constants {
         static let reuseId = "SearchResultCollectionViewCell"
         static let nibName = "SearchResultCollectionViewCell"
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.starLabel.text = nil
+        self.nameLabel.text = nil
+        self.imageView.image = nil
+        self.borderView.layer.cornerRadius = 2.0
     }
     
     override func prepareForReuse() {
@@ -38,6 +47,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.starLabel.text = result.rating.valueAsStars
             self.nameLabel.text = result.name
+            self.starLabel.textColor = result.rating.starColor
         }
         self.setupImage(with: result.imageUrl)
     }
@@ -47,14 +57,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
             self.imageView.kf.setImage(with: url)
         }
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.starLabel.text = nil
-        self.nameLabel.text = nil
-        self.imageView.image = nil
-    }
-
 }
 
 

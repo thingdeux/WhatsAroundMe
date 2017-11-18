@@ -46,6 +46,7 @@ class RankedTitleCollectionViewCell: UICollectionViewCell {
             self.rankLabel.text = reviewable.reviewRank.valueAsStars
             self.reviewLabel.text = reviewable.reviewText
             self.titleLabel.text = reviewable.reviewAuthor.name
+            self.rankLabel.textColor = reviewable.reviewRank.starColor
         }
     }
     
@@ -55,11 +56,12 @@ class RankedTitleCollectionViewCell: UICollectionViewCell {
             self.reviewDateLabel.text = nil
             self.reviewLabel.alpha = 0
             self.reviewDateLabel.alpha = 0
-            
+                        
             self.titleLabel.text = textDisplayable.rankedTitleName
             self.rankLabel.text = textDisplayable.rankedTitleValue.valueAsStars
             self.titleLabel.alpha = 1
             self.rankLabel.alpha = 1
+            self.rankLabel.textColor = textDisplayable.rankedTitleValue.starColor
         }
     }
 

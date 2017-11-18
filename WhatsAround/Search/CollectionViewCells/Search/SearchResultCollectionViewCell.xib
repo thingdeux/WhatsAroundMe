@@ -62,6 +62,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="371" height="354"/>
             <connections>
+                <outlet property="borderView" destination="4CG-Uo-oba" id="cDm-9D-cvo"/>
                 <outlet property="imageView" destination="5kp-Dq-NPI" id="n2W-Or-sJh"/>
                 <outlet property="nameLabel" destination="xX1-g9-Ebl" id="HY6-Cy-DKD"/>
                 <outlet property="starLabel" destination="X66-KH-7Op" id="b6e-iq-8OR"/>

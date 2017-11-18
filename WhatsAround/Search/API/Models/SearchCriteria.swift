@@ -6,7 +6,7 @@
 //  Copyright © 2017 Josh Land. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol APISearchProcessable {
     typealias SearchResultsCompletionHandler = (_ response: SearchResponse?) -> Void
@@ -50,5 +50,13 @@ extension Float {
     var valueAsStars: String {
         let ratingValueRounded = Int(self)
         return String(repeatElement("★", count: ratingValueRounded))
+    }
+    
+    var starColor: UIColor {
+        if self >= 4.0 {
+            return UIColor(named: "RankColor")!
+        } else {
+            return UIColor(named: "AccentColor")!
+        }
     }
 }

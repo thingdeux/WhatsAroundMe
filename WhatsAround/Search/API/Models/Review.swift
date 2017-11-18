@@ -42,7 +42,10 @@ extension Review : RankedReviewable {
     }
     
     var reviewDateTime: String {
-        return self.time_created
+        // The time_created format from the API is <DATE> <Time> - I only want the date
+        // So I'm stripping it.
+        let splitDate = self.time_created.split(separator: " ")
+        return String(describing: splitDate.first ?? "")
     }
 }
 

@@ -57,7 +57,7 @@ extension SearchDetailViewController : UICollectionViewDelegateFlowLayout {
         case is ImageCarouselScrollable:
             return CGSize(width: screenSize.width, height: screenSize.height / ScrollableImageContainerCollectionViewCell.Constants.screenHeightDivisor)
         case is RankedReviewable:
-            return CGSize(width: screenSize.width, height: screenSize.height / 8)
+            return CGSize(width: screenSize.width, height: screenSize.height / 6)
         default:
             return CGSize.zero
         }
