@@ -24,7 +24,7 @@ struct Business: Decodable, SearchResultDisplayable {
     private let review_count: Int
     
     let photos: [String]?
-    var reviews: [Review]
+    var reviews: [Review]?
     
     // Computed Vars using iOS Standard Naming Conventions.
     // Only keeping underscores for is_closed / review_count

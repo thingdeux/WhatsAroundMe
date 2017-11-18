@@ -10,15 +10,14 @@ import UIKit
 
 class SearchDetailViewController: UIViewController {
     @IBOutlet fileprivate weak var ratingLabel: UILabel!
-    @IBOutlet fileprivate weak var businessNameLabel: UILabel!
-    @IBOutlet fileprivate weak var iamgeCollectionView: UICollectionView!
-    @IBOutlet fileprivate weak var reviewsCollectionView: UICollectionView!
+    @IBOutlet fileprivate weak var businessNameLabel: UILabel!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = false        
     }
+    
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -30,14 +29,8 @@ class SearchDetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        print("PERFORM SEGUE CALLED")
     }
-    */
-
 }

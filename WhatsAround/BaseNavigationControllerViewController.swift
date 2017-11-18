@@ -12,6 +12,8 @@ class BaseNavigationControllerViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.isNavigationBarHidden = true        
+        self.isNavigationBarHidden = true
+        self.navigationBar.tintColor = UIColor(named: "PrimaryColor")!
+        self.navigationBar.backgroundColor = UIColor(named: "PrimaryText")!
     }
 }

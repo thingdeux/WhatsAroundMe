@@ -35,13 +35,17 @@ class SearchDashboardViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     private func setupUIAndDelegates() {
         self.collectionView.register(UINib(nibName: SearchResultCollectionViewCell.Constants.nibName, bundle: nil),
                                      forCellWithReuseIdentifier: SearchResultCollectionViewCell.Constants.reuseId)
         
         // Force unwrapping as this color is in the asset library and used widely throughout, it should crash if missing.
         self.view.backgroundColor = UIColor(named: "PrimaryColor")!
-        
+        self.navigationController?.isNavigationBarHidden = true
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.searchBar.delegate = self
@@ -122,16 +126,15 @@ class SearchDashboardViewController: UIViewController {
 
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        
     }
     
 }
 
+// MARK: CollectionView DataSource
 extension SearchDashboardViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.model.state.allSearchResults.count
@@ -149,11 +152,17 @@ extension SearchDashboardViewController : UICollectionViewDataSource {
     }
 }
 
+// MARK: CollectionViewDelegate
 extension SearchDashboardViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row < self.model.state.allSearchResults.count {
+            let business = self.model.state.allSearchResults[indexPath.row]
+            self.performSegue(withIdentifier: "DashboardToDetailSegue", sender: self)
+        }
     }
 }
 
+// MARK: CollectionView Flow Layout
 extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screen = UIScreen.main.bounds        
@@ -166,7 +175,7 @@ extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+// MARK: UISearchBar Delegate
 extension SearchDashboardViewController : UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         DispatchQueue.main.async {
