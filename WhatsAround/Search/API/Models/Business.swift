@@ -52,6 +52,16 @@ struct Business: Decodable, SearchResultDisplayable {
     }
 }
 
+extension Business : RankedTextDisplayable {
+    var rankedTitleName: String {
+        return self.name
+    }
+    
+    var rankedTitleValue: Float {
+        return self.rating
+    }
+}
+
 /*
     Example Response (from /v3/businesses/search ...)
  

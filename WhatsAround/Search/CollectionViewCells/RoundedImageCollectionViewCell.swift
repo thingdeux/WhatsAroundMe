@@ -14,8 +14,7 @@ import Kingfisher
 class RoundedImageCollectionViewCell: UICollectionViewCell {
     enum Constants {
         static let reuseid = "RoundedImageCollectionViewCell"
-    }
-    
+    }    
 
     @IBOutlet weak var imageBorder: UIView!
     @IBOutlet fileprivate weak var roundedImageView: UIImageView!

@@ -9,8 +9,9 @@
 import UIKit
 
 class SearchDetailViewController: UIViewController {
-    @IBOutlet fileprivate weak var ratingLabel: UILabel!
-    @IBOutlet fileprivate weak var businessNameLabel: UILabel!    
+    @IBOutlet fileprivate weak var detailCollectionView: UICollectionView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,4 +34,23 @@ class SearchDetailViewController: UIViewController {
     override func performSegue(withIdentifier identifier: String, sender: Any?) {
         print("PERFORM SEGUE CALLED")
     }
+}
+
+// MARK: Protocol definitions for detail page cells.
+protocol DetailPageDisplayable {}
+
+protocol ImageCarouselScrollable : DetailPageDisplayable {
+    var imageUrls: [String] { get }
+}
+
+protocol RankedTextDisplayable : DetailPageDisplayable {
+    var rankedTitleName: String { get }
+    var rankedTitleValue: Float { get }
+}
+
+protocol RankedReviewable : DetailPageDisplayable {
+    var reviewAuthor: ReviewUser { get }
+    var reviewText: String { get }
+    var reviewDateTime: String { get }
+    var reviewRank: Float { get }
 }

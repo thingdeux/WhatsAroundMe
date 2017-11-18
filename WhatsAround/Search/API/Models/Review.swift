@@ -26,15 +26,48 @@ struct Review : Decodable {
     
     private let time_created: String
     private let text: String
-    
-    // Computed Vars using iOS Standard Naming Conventions and offering more clarity.
-    // Only keeping underscores for time_created / text
-    // To save time and not have to implement CodingKeys
-    var reviewDate: String {
-        return self.time_created
-    }
-    
+}
+
+extension Review : RankedReviewable {
     var reviewText: String {
         return self.text
     }
+    
+    var reviewRank: Float {
+        return self.rating
+    }
+    
+    var reviewAuthor: ReviewUser {
+        return self.user
+    }
+    
+    var reviewDateTime: String {
+        return self.time_created
+    }
 }
+
+
+/*  Example Response - https://api.yelp.com/v3/businesses/<business-id>/reviews
+ 
+ {
+     "reviews":
+        [
+            {
+             "url": "https://www.yelp.com/biz/p",
+             "text": "Solid pizza can be hard to find but here is a secret Pizza Bowl is solid pizza. The owner promised it would be even better the next day...",
+             "rating": 4,
+             "user": {
+                 "image_url": "https://s3-media3.fl.yelpcdn.com/photo/d1yDWZjnLS0iAwYOhD8J6Q/o.jpg",
+                 "name": "Luke M."
+             },
+              "time_created": "2017-07-17 18:23:26"
+             },
+        ] ...
+        }
+    ]
+     "total": 104,
+     "possible_languages": ["en"]
+}
+ 
+ 
+ */

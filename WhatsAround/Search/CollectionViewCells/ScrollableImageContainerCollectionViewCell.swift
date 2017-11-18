@@ -10,8 +10,7 @@ import UIKit
 
 class ScrollableImageContainerCollectionViewCell: UICollectionViewCell {
     @IBOutlet fileprivate weak var imageCollectionView: UICollectionView!
-    
-    var imageUrls: [String] = []
+    fileprivate var imageUrls: [String] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
