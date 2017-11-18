@@ -80,11 +80,11 @@ extension SearchDetailViewController : UICollectionViewDelegateFlowLayout {
         
         switch displayableItem {
         case is RankedTextDisplayable:
-            return CGSize(width: screenSize.width, height: screenSize.height / 10)
+            return CGSize(width: screenSize.width, height: screenSize.height / RankedTitleCollectionViewCell.Constants.titleHeightDivisor)
         case is ImageCarouselScrollable:
             return CGSize(width: screenSize.width, height: screenSize.height / ScrollableImageContainerCollectionViewCell.Constants.screenHeightDivisor)
         case is RankedReviewable:
-            return CGSize(width: screenSize.width, height: screenSize.height / 6)
+            return CGSize(width: screenSize.width, height: screenSize.height / RankedTitleCollectionViewCell.Constants.reviewHeightDivisor)
         default:
             return CGSize.zero
         }
@@ -94,7 +94,7 @@ extension SearchDetailViewController : UICollectionViewDelegateFlowLayout {
 // MARK: UICollectionViewDataSource
 extension SearchDetailViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row < self.model?.state?.items.count  ?? 0, let items = self.model?.state?.items {
+        if indexPath.row < self.model?.state?.items.count ?? 0, let items = self.model?.state?.items {
             let displayableItem = items[indexPath.row]
             switch (displayableItem) {
             case let header as RankedTextDisplayable:

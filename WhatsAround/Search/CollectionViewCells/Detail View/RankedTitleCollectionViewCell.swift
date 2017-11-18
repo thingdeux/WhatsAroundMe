@@ -13,6 +13,8 @@ import UIKit
 class RankedTitleCollectionViewCell: UICollectionViewCell {
     enum Constants {
         static let reuseId = "RankedTitleCollectionViewCell"
+        static let titleHeightDivisor: CGFloat = 9.75
+        static let reviewHeightDivisor: CGFloat = 6
     }
     
     @IBOutlet fileprivate weak var titleLabel: UILabel!
