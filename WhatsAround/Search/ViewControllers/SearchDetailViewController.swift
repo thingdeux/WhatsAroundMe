@@ -26,9 +26,9 @@ class SearchDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        /* When the pushed View Controller is halfway dismissed by sliding away
-           If you let go - the navbar will disappear entirely.  Shifted this here instead
-           of in viewDidLoad to make sure the navigation bar is always available.        
+        /* This fixes a problem occuring when using a sliding gesture to dismiss.
+           If you let go mid slide - the navbar will disappear entirely.
+           Shifted this here instead of in viewDidLoad to make sure the navigation bar is always available.
         */
         self.navigationController?.isNavigationBarHidden = false
     }
@@ -45,7 +45,7 @@ class SearchDetailViewController: UIViewController {
     }
     
     /// Once all of the data loads - it'll fill in the collection views as requested but it does it
-    /// Quickly and harshly - instead bring the collection view in just as the spinner fades for a smoother transition.
+    /// Quickly and is visually harsh. Instead bring the collection view in just as the spinner fades for a smoother transition.
     private func smoothlyDisplayDetailViews() {
         DispatchQueue.main.async {
             self.detailCollectionView.reloadData()

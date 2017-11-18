@@ -51,19 +51,16 @@ class SearchDashboardModel {
                 self.resultsMutationQueue.sync {
                     self.state.allSearchResults.removeAll()
                 }
-                
                 self.uiRefreshHandler?(.locationPermissionsDenied)
             case .error:
                 self.resultsMutationQueue.sync {
                     self.state.allSearchResults.removeAll()
                 }
-                
                 self.uiRefreshHandler?(.errorRetrievingLocationPermissions)
             case .permissionDenied:
                 self.resultsMutationQueue.sync {
                     self.state.allSearchResults.removeAll()
                 }
-                
                 self.uiRefreshHandler?(.locationPermissionsDenied)
             }
         }
