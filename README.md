@@ -6,6 +6,7 @@
     - There are various ways to install it, instructions here -> https://guides.cocoapods.org/using/getting-started.html
     - Once it is installed run 'pod install' in the root of the repo.
     - After pod install finishes - make sure to open the project using the .xcworkspace file and not xcodeproj.
+    - Make sure to include your Yelp API key in -> YelpAPIService -> Constants -> authToken before running.
 
 
 # Feedback
@@ -38,12 +39,12 @@
 
 ## Time Breakdown
 
-* Total time for completing this code test (timed using Toggl) -> ~20 hours and 32 minutes
+* Total time for completing this code test (timed using Toggl) -> ~23 hours and 32 minutes
     - Yelp API Registration and Documentation Familiarization - ~45 Mins - 1 Hour
     - Creation of API Models and Consumers for Search / Businesses / Reviews - ~3 Hours and 33 mins
-    - View Controller / Collection View (Cell) Architecture - ~5 Hours
+    - View Controller / Collection View (Cell) Architecture - 6 Hours
     - UI Polish and Tweaks - ~8 Hours
-    - Bug Squashing and QA - ~2 Hours
+    - Bug Squashing and QA - ~4 Hours
 
 
 ## Excuses

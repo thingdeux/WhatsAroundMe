@@ -105,7 +105,7 @@ extension YelpAPIService {
            OAuth2 Auth flow for this test but will do so if required.
          
          */
-        static let authToken = "fyJvsBDSGDaMwk8oLcR3D_yAbsAxcX_TwxR7R9zgz04f9ZIwoH3l6MWDyhiOYP1jbXSohJdrXTca1_gXcEC79zkvxgUVqDqf06SPH9ZxOlS3xN9NbeNj2tp0VDYOWnYx"
+        static let authToken = ""
         
         enum Urls {
             static let baseUrl = "https://api.yelp.com/v3/"

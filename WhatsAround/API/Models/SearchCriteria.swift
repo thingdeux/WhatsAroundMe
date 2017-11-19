@@ -31,7 +31,7 @@ struct SearchCriteria {
     }
     
     enum Constants {
-        static let maxRadiusInMeters = 16093 // ~10 Miles
+        static let maxRadiusInMeters = 16093 * 2 // ~10 Miles
         static let maxResultsPerCall = 50
     }
 }

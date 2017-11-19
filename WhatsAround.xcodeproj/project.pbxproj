@@ -142,6 +142,7 @@
 				031B5F5E1FBE719800480A6A /* Search Dashboard */,
 				031B5F4C1FBE716800480A6A /* AppDelegate.swift */,
 				031B5F531FBE716800480A6A /* Assets.xcassets */,
+				031B5F501FBE716800480A6A /* Search.storyboard */,
 				031B5F551FBE716800480A6A /* LaunchScreen.storyboard */,
 				031B5F581FBE716800480A6A /* Info.plist */,
 				0312490B1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift */,
@@ -156,7 +157,6 @@
 				0312490D1FBEBCF400A65F82 /* CollectionViewCells */,
 				031249001FBE970200A65F82 /* Models */,
 				031B5F5F1FBE71B400480A6A /* ViewControllers */,
-				031B5F501FBE716800480A6A /* Search.storyboard */,
 			);
 			path = "Search Dashboard";
 			sourceTree = "<group>";

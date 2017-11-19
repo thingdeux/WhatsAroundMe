@@ -25,13 +25,7 @@ extension UIViewController {
     To make this fall inline with the design: Borrowed from -> https://forums.developer.apple.com/thread/85226
  */
 extension UISearchBar {
-    func setSearchUIElements(to color: UIColor, placeHolderText: String) {
-//        let attributedString = NSAttributedString(string: placeHolderText)
-//        let textFieldPlaceHolder = self.value(forKey: "searchField") as? UITextField
-//        textFieldPlaceHolder?.attributedPlaceholder = attributedString
-//        textFieldPlaceHolder?.textColor = color
-//        textFieldPlaceHolder?.tintColor = color
-        
+    func setSearchUIElements(to color: UIColor, placeHolderText: String) {        
         // using this to set the text color of the 'Cancel' button since the search bar ignores the global tint color property
         UISearchBar.appearance().tintColor = color
         

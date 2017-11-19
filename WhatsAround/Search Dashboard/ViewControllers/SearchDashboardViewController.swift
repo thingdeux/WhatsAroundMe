@@ -28,14 +28,13 @@ class SearchDashboardViewController: UIViewController {
         self.setupUIAndDelegates()
         self.hideKeyboardWhenNotFocusedOnSearchBar()
         self.searchBar.setSearchUIElements(to: UIColor.primaryText, placeHolderText: "Search Nearby")
-        
-        // Capture self to prevent leaks
+                
         self.model.setHandlers { [weak self] (updateType) in
             self?.updateUI(for: updateType)
         }
-    }
+    }        
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -83,6 +82,7 @@ class SearchDashboardViewController: UIViewController {
         }
     }
     
+    /// UI State Refresh Handler - anytime the model calls for a state update this will be run.
     private func updateUI(for type: SearchDashboardModel.UIUpdateType) {
         switch (type) {
             case .newSearchResults:
@@ -95,6 +95,7 @@ class SearchDashboardViewController: UIViewController {
                 self.setLoading(true)
             case .timeout, .noSearchResultsFound:
                 DispatchQueue.main.async {
+                    self.collectionView.reloadData()
                     self.infoLabel.text = "No Results Found"
                 }
                 self.setLoading(false)
