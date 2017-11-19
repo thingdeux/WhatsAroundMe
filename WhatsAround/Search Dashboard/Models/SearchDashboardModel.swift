@@ -24,8 +24,7 @@ class SearchDashboardModel {
     private var uiRefreshHandler: UIUpdateHandler?
     
     private let resultsMutationQueue = DispatchQueue(label: "land.josh.WhatsAround.resultsMutation", qos: .userInteractive)
-    private let apiQueue = DispatchQueue(label: "land.josh.WhatsAround.apiQueue", qos: .userInitiated)
-    
+    private let apiQueue = DispatchQueue(label: "land.josh.WhatsAround.apiQueue", qos: .userInitiated)    
     
     // Exposed View Model
     fileprivate(set) var state = State()

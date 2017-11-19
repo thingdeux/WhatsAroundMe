@@ -27,7 +27,7 @@ extension SearchDetailModel {
     struct State {
         /// All items in the detail page collection view will have to adhere to DetailPageDisplayable
         /// This will include the image carousel - the reviews - and the title/rank header
-        private(set) var items = [DetailPageDisplayable]()
+        private(set) var items = [DetailPageDisplayable]()                
         
         private let business: Business
         private var photos = [String]()

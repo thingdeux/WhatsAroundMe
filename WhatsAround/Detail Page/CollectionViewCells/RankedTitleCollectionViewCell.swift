@@ -13,7 +13,7 @@ import UIKit
 class RankedTitleCollectionViewCell: UICollectionViewCell {
     enum Constants {
         static let reuseId = "RankedTitleCollectionViewCell"
-        static let titleHeightDivisor: CGFloat = 9.75
+        static let titleHeightDivisor: CGFloat = 9
         static let reviewHeightDivisor: CGFloat = 6
     }
     
@@ -60,6 +60,8 @@ class RankedTitleCollectionViewCell: UICollectionViewCell {
             self.reviewDateLabel.alpha = 0
                         
             self.titleLabel.text = textDisplayable.rankedTitleName
+            self.titleLabel.font = UIFont.systemFont(ofSize: 30)
+            
             self.rankLabel.text = textDisplayable.rankedTitleValue.valueAsStars
             self.titleLabel.alpha = 1
             self.rankLabel.alpha = 1

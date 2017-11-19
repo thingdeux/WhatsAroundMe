@@ -28,6 +28,20 @@ struct Review : Decodable {
     private let text: String
 }
 
+extension Review : Comparable {
+    static func <(lhs: Review, rhs: Review) -> Bool {
+        return lhs.rating < rhs.rating
+    }
+    
+    static func >(lhs: Review, rhs: Review) -> Bool {
+        return lhs.rating > rhs.rating
+    }
+    
+    static func ==(lhs: Review, rhs: Review) -> Bool {
+        return lhs.rating == rhs.rating
+    }    
+}
+
 extension Review : RankedReviewable {
     var reviewText: String {
         return self.text

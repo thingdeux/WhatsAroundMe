@@ -27,6 +27,7 @@ class SearchDashboardViewController: UIViewController {
         super.viewDidLoad()
         self.setupUIAndDelegates()
         self.hideKeyboardWhenNotFocusedOnSearchBar()
+        self.searchBar.setSearchUIElements(to: UIColor(named: "PrimaryText")!)        
         
         // Capture self to prevent leaks
         self.model.setHandlers { [weak self] (updateType) in
@@ -176,7 +177,7 @@ extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         // Want a nice tight fit between cells
-        return -10.0
+        return -14.0
     }
 }
 

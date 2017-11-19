@@ -31,7 +31,7 @@ struct SearchCriteria {
     }
     
     enum Constants {
-        static let maxRadiusInMeters = 40000 // ~25 Miles
+        static let maxRadiusInMeters = 16093 // ~10 Miles
         static let maxResultsPerCall = 50
     }
 }
@@ -54,9 +54,20 @@ extension Float {
     
     var starColor: UIColor {
         if self >= 4.0 {
-            return UIColor(named: "RankColor")!
+            return UIColor.rankColor
         } else {
-            return UIColor(named: "AccentColor")!
+            return UIColor.secondaryText
         }
+    }
+}
+
+
+extension UIColor {
+    static var rankColor: UIColor {
+        return UIColor(named: "RankColor")!
+    }
+    
+    static var secondaryText: UIColor {
+        return UIColor(named: "SecondaryText")!
     }
 }

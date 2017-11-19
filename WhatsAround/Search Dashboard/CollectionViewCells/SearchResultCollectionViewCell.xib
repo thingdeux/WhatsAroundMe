@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Your Business Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="xX1-g9-Ebl" userLabel="NameLabel">
-                        <rect key="frame" x="0.0" y="310.5" width="371" height="14.5"/>
+                        <rect key="frame" x="0.0" y="302.5" width="371" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" name="PrimaryText"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CG-Uo-oba" userLabel="Border">
+                    <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CG-Uo-oba" userLabel="Border">
                         <rect key="frame" x="0.0" y="0.0" width="371" height="279"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5kp-Dq-NPI" userLabel="mainImageView">
                         <rect key="frame" x="1" y="1" width="369" height="277"/>
@@ -37,7 +36,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="★★★★★" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X66-KH-7Op" userLabel="StarLabel">
-                        <rect key="frame" x="0.0" y="286" width="371" height="20.5"/>
+                        <rect key="frame" x="0.0" y="282" width="371" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
                         <nil key="highlightedColor"/>
@@ -45,15 +44,15 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="xX1-g9-Ebl" firstAttribute="top" secondItem="X66-KH-7Op" secondAttribute="bottom" constant="4" id="2IE-Mj-e6W"/>
+                <constraint firstItem="xX1-g9-Ebl" firstAttribute="top" secondItem="X66-KH-7Op" secondAttribute="bottom" id="2IE-Mj-e6W"/>
                 <constraint firstAttribute="trailing" secondItem="xX1-g9-Ebl" secondAttribute="trailing" id="4bJ-Kd-kEr"/>
                 <constraint firstItem="X66-KH-7Op" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4nR-r9-k0h"/>
                 <constraint firstAttribute="trailing" secondItem="5kp-Dq-NPI" secondAttribute="trailing" constant="1" id="9cZ-to-Ky3"/>
                 <constraint firstItem="4CG-Uo-oba" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="In0-xo-3e8"/>
                 <constraint firstItem="xX1-g9-Ebl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lo2-KI-7Un"/>
-                <constraint firstItem="X66-KH-7Op" firstAttribute="top" secondItem="4CG-Uo-oba" secondAttribute="bottom" constant="7" id="N9s-iN-eMl"/>
+                <constraint firstItem="X66-KH-7Op" firstAttribute="top" secondItem="4CG-Uo-oba" secondAttribute="bottom" constant="3" id="N9s-iN-eMl"/>
                 <constraint firstItem="4CG-Uo-oba" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="R7s-s4-A1Y"/>
-                <constraint firstItem="X66-KH-7Op" firstAttribute="top" secondItem="5kp-Dq-NPI" secondAttribute="bottom" constant="8" id="XFP-TT-v7B"/>
+                <constraint firstItem="X66-KH-7Op" firstAttribute="top" secondItem="5kp-Dq-NPI" secondAttribute="bottom" constant="4" id="XFP-TT-v7B"/>
                 <constraint firstAttribute="trailing" secondItem="4CG-Uo-oba" secondAttribute="trailing" id="ahs-hl-9dQ"/>
                 <constraint firstItem="5kp-Dq-NPI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="nQC-W1-Emo"/>
                 <constraint firstAttribute="trailing" secondItem="X66-KH-7Op" secondAttribute="trailing" id="p0v-dm-aIj"/>
@@ -70,9 +69,4 @@
             <point key="canvasLocation" x="185.5" y="204"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <namedColor name="PrimaryText">
-            <color red="0.92941176470588238" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

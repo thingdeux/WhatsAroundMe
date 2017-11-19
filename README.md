@@ -10,14 +10,17 @@
 
 # Feedback
 
+* Yelp API is well documented and easy to consume.
 
-* This test is deceptively simple - that is - there are lots more complexities than might be expected on the outset.
+* Useful and very explicit requirements about what's expected from this test.
+
+* This test is pretty involved and deceptively simple - that is - there are lots more complexities than might be expected on the outset.
     Examples:
 
     - Core Location Management - properly synchronizing and handling the Core Location delegate and accounting for the fact that the user can turn
         it off at any time and the app has to react accordingly.
     - Various loading and failure states for things going wrong.
-    - Lots of UI considerations with these 2 screens.
+    - Lots of UI considerations with these 2 screens [See below]
             
 * This test is heavy on UI but doesn't include explicit designs.  Things like spacing between elements, colors or assets.  I had to play a bit and find
     what feels right for each element as well as find an appropriate color pallette.  It's not technically difficult but is time-consuming - might recommend

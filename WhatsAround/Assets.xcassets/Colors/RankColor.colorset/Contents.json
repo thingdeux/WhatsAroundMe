@@ -11,8 +11,8 @@
         "components" : {
           "red" : "0xFF",
           "alpha" : "1.000",
-          "blue" : "0x82",
-          "green" : "0xFD"
+          "blue" : "0x00",
+          "green" : "0xCC"
         }
       }
     }

@@ -21,7 +21,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFM-GR-swe">
                         <rect key="frame" x="0.0" y="0.0" width="251" height="171"/>
-                        <color key="backgroundColor" name="PrimaryText"/>
+                        <color key="backgroundColor" name="AccentColor"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s0n-QK-NaB">
                         <rect key="frame" x="1" y="1" width="249" height="169"/>
@@ -48,8 +48,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="PrimaryText">
-            <color red="0.92941176470588238" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AccentColor">
+            <color red="0.19607843137254902" green="0.16078431372549021" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
