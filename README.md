@@ -64,7 +64,7 @@
 
 ## Excuses
 
-* I didn't include any Unit Tests unfortunately, would generally have done so but 18+ hours is about the max I'm able to spend on this.
+* I didn't include any Unit Tests unfortunately, would generally have done so but 23+ hours is about the max I'm able to spend on this.
 
 ## Deviations [Design]:
 
