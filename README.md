@@ -1,6 +1,7 @@
 #  Code Test
 
-# Screenshots 
+# Screenshots
+
 ![screenshot](GithubAssets/1.png)
 ![screenshot](GithubAssets/2.png)
 ![screenshot](GithubAssets/3.png)
@@ -8,10 +9,9 @@
 ![screenshot](GithubAssets/8.png)
 ![screenshot](GithubAssets/4.png)
 ![screenshot](GithubAssets/5.png)
-
-# Demo
 ![screenshot](GithubAssets/6.png)
 
+# Demo
 
 ![](GithubAssets/Final-Optimized.gif)
 
