@@ -16,10 +16,10 @@ protocol SearchResultDisplayable {
 }
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
-    @IBOutlet fileprivate weak var imageView: UIImageView!
-    @IBOutlet fileprivate weak var starLabel: UILabel!
-    @IBOutlet fileprivate weak var nameLabel: UILabel!
-    @IBOutlet fileprivate weak var borderView: UIView!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var starLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var borderView: UIView!
     
     enum Constants {
         static let reuseId = "SearchResultCollectionViewCell"

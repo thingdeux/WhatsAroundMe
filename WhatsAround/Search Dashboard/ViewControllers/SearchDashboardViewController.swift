@@ -11,10 +11,10 @@ import UIKit
 typealias EmptyCompletionHandler = () -> Void
 
 class SearchDashboardViewController: UIViewController {
-    @IBOutlet fileprivate weak var collectionView: UICollectionView!
-    @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet fileprivate weak var searchBar: UISearchBar!
-    @IBOutlet fileprivate weak var infoLabel: UILabel!       
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var infoLabel: UILabel!
     
     private var currentlyLoading: Bool = false
     private let model = SearchDashboardModel()
@@ -50,7 +50,7 @@ class SearchDashboardViewController: UIViewController {
         self.collectionView.contentInset = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 8.0, right: 16.0)
     }
     
-    private func setLoading(_ isLoading: Bool, forceHideInfoLabel: Bool? = nil) {
+    private func setLoading(_ isLoading: Bool, forceHideInfoLabel: Bool = false) {
         // If we're already in a loading state - transition out and vice-versa.
         // If we receive a call to setLoading and we're already in that state return.
         guard isLoading != self.currentlyLoading else { return }
@@ -61,7 +61,7 @@ class SearchDashboardViewController: UIViewController {
                     self.collectionView.alpha = 1
                     self.infoLabel.alpha = 0
                 }, completion: { (_) in
-                    if let forceHideInfoLabel = forceHideInfoLabel, forceHideInfoLabel != false {
+                    if forceHideInfoLabel != false {
                         self.infoLabel.alpha = 0
                     } else {
                         self.infoLabel.alpha = 1

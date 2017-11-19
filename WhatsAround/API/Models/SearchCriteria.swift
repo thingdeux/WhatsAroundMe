@@ -14,7 +14,10 @@ protocol APISearchProcessable {
     func findNearbyBusinesses(_ criteria: SearchCriteria, apiQueue: DispatchQueue, completionHandler: @escaping SearchResultsCompletionHandler)        
 }
 
+/// A nice simple struct for passing type safe search criteria that will be turned into query params for the API Consumer.
 struct SearchCriteria {
+    typealias DistanceInMeters = Int
+    
     let searchTerm: String
     let latitude: Double
     let longitude: Double
@@ -22,6 +25,7 @@ struct SearchCriteria {
     /// Make sure to check the maxResultsPerCall constant in before chunking with offset.
     /// Ideally you should get the next set using the same amounts.
     let offset: Int
+    let searchRadiusInMeters: DistanceInMeters = Constants.maxRadiusInMeters
     
     enum SortCriteria: String {
         case bestMatch = "best_match"
@@ -31,7 +35,7 @@ struct SearchCriteria {
     }
     
     enum Constants {
-        static let maxRadiusInMeters = 16093 * 2 // ~10 Miles
+        static let maxRadiusInMeters = 16093 // ~10 Miles
         static let maxResultsPerCall = 50
     }
 }

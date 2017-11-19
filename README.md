@@ -1,12 +1,24 @@
 #  Code Test
 
+[Launch Screen](GithubAssets/1.png)
+[Search - No Results](GithubAssets/2.png)
+[Search - Results](GithubAssets/3.png)
+[Search - No Results Found](GithubAssets/7.png)
+[Search - Location Permission Denied](GithubAssets/8.png)
+[Detail A](GithubAssets/4.png)
+[Detail B](GithubAssets/5.png)
+[Detail C - Remembered Position](GithubAssets/6.png)
+
+
+[Demo](GithubAssets/Final-Optimized.gif)
+
 # Installation Notes
 
 * I've used Cocoapods to add 2 dependencies.
     - There are various ways to install it, instructions here -> https://guides.cocoapods.org/using/getting-started.html
     - Once it is installed run 'pod install' in the root of the repo.
     - After pod install finishes - make sure to open the project using the .xcworkspace file and not xcodeproj.
-    - Make sure to include your Yelp API key in -> YelpAPIService -> Constants -> authToken before running.
+    - Make sure to include your Yelp API key in -> YelpAPIService -> Constants -> authToken before 
 
 
 # Feedback

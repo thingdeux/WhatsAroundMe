@@ -16,10 +16,13 @@ class YelpAPIService: APISearchProcessable {
         assert(!YelpAPIService.Constants.authToken.isEmpty, "😬 You need a Yelp API AuthToken to continue.")
     }
     
+    static func generateRequest(url: String, parameters: Parameters? = nil) -> DataRequest {
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(Constants.authToken)"]
+        return Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+    }
     
     /// Search Yelp API for businesses near a given lat/long with additional search criteria.
     final func findNearbyBusinesses(_ criteria: SearchCriteria, apiQueue: DispatchQueue = DispatchQueue.global(), completionHandler: @escaping SearchResultsCompletionHandler) {
-        let headers: HTTPHeaders = ["Authorization": "Bearer \(Constants.authToken)"]
         let parameters: Parameters = [
             "term": criteria.searchTerm,
             "latitude": criteria.latitude,
@@ -27,10 +30,10 @@ class YelpAPIService: APISearchProcessable {
             "offset": criteria.offset,
             "sort_by": criteria.sortedBy.rawValue,
             "limit": SearchCriteria.Constants.maxResultsPerCall,
-            "radius": SearchCriteria.Constants.maxRadiusInMeters,
+            "radius": criteria.searchRadiusInMeters,
         ]
         let searchUrl = Constants.Urls.baseUrl + Constants.Urls.businessSearchEndpoint
-        let request = Alamofire.request(searchUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+        let request = YelpAPIService.generateRequest(url: searchUrl, parameters: parameters)
         
         // TODO - Low Priority: Retry logic necessary? Maybe check reachability to make sure the user has internet first.
         request.responseData(queue: apiQueue) { (response) in            
@@ -49,9 +52,8 @@ class YelpAPIService: APISearchProcessable {
     }
     
     static func getDetailedInformation(for business: Business, apiQueue: DispatchQueue = DispatchQueue.global(), completionHandler: @escaping BusinessDetailsCompletionHandler) {
-        let headers: HTTPHeaders = ["Authorization": "Bearer \(Constants.authToken)"]
         let requestUrl = "\(Constants.Urls.baseUrl)\(Constants.Urls.businessDetailEndpoint)\(business.id)"
-        let request = Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let request = YelpAPIService.generateRequest(url: requestUrl)
         
         request.responseData(queue: apiQueue) { (response) in
             if let json = response.result.value {
@@ -74,12 +76,11 @@ class YelpAPIService: APISearchProcessable {
         https://www.yelp.com/developers/documentation/v3/business_reviews
      */
     static private func getReviews(for business: Business, apiQueue: DispatchQueue = DispatchQueue.global(), completionHandler: @escaping BusinessDetailsCompletionHandler) {
-        let headers: HTTPHeaders = ["Authorization": "Bearer \(Constants.authToken)"]
         let baseUrl = "\(Constants.Urls.baseUrl)\(Constants.Urls.businessReviewsEndpoint)"
         let requestUrl = baseUrl.replacingOccurrences(of: "<id>", with: business.id)
-        let request = Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let request = YelpAPIService.generateRequest(url: requestUrl)
         
-        // If this method has been called - at worst we've already got detail business info but just no reviews.
+        // If this method has been called - at worst we've already got detailed business info but just no reviews.
         // All failure handlers will at the very least pass the business details back.
         request.responseData(queue: apiQueue) { (response) in
             if let json = response.result.value {
@@ -101,7 +102,7 @@ class YelpAPIService: APISearchProcessable {
 
 // MARK: Namespaced Convenience Definitions
 extension YelpAPIService {
-    fileprivate enum Constants {        
+    fileprivate enum Constants {
         /*
          
            The API uses OAUTH2 authentication however this token will not expire until the year 2038 per Yelp documentation.

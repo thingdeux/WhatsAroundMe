@@ -17,10 +17,10 @@ class RankedTitleCollectionViewCell: UICollectionViewCell {
         static let reviewHeightDivisor: CGFloat = 6
     }
     
-    @IBOutlet fileprivate weak var titleLabel: UILabel!
-    @IBOutlet fileprivate weak var reviewDateLabel: UILabel!
-    @IBOutlet fileprivate weak var reviewLabel: UILabel!
-    @IBOutlet fileprivate weak var rankLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var reviewDateLabel: UILabel!
+    @IBOutlet private weak var reviewLabel: UILabel!
+    @IBOutlet private weak var rankLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

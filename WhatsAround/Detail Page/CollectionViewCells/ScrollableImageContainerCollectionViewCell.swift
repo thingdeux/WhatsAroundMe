@@ -9,7 +9,7 @@
 import UIKit
 
 class ScrollableImageContainerCollectionViewCell: UICollectionViewCell {
-    @IBOutlet fileprivate weak var imageCollectionView: UICollectionView!
+    @IBOutlet private weak var imageCollectionView: UICollectionView!
     
     enum Constants {
         static let reuseId = "ScrollableImageContainerCollectionViewCell"
@@ -17,7 +17,7 @@ class ScrollableImageContainerCollectionViewCell: UICollectionViewCell {
         static let screenWidthDivisor: CGFloat = 1.20
     }
     
-    fileprivate var imageUrls: [String] = []
+    private var imageUrls: [String] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()

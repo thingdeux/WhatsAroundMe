@@ -9,10 +9,10 @@
 import UIKit
 
 class SearchDetailViewController: UIViewController {
-    @IBOutlet fileprivate weak var detailCollectionView: UICollectionView!
-    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    @IBOutlet private weak var detailCollectionView: UICollectionView!
+    @IBOutlet private weak var loadingSpinner: UIActivityIndicatorView!
     
-    fileprivate var model: SearchDetailModel?
+    private var model: SearchDetailModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,7 +27,7 @@ class SearchDashboardModel {
     private let apiQueue = DispatchQueue(label: "land.josh.WhatsAround.apiQueue", qos: .userInitiated)    
     
     // Exposed View Model
-    fileprivate(set) var state = State()
+    private(set) var state = State()
     
     final func setHandlers(uiRefreshHandler: @escaping UIUpdateHandler) {
         self.uiRefreshHandler = uiRefreshHandler

@@ -25,7 +25,7 @@ extension UIViewController {
     To make this fall inline with the design: Borrowed from -> https://forums.developer.apple.com/thread/85226
  */
 extension UISearchBar {
-    func setSearchUIElements(to color: UIColor, placeHolderText: String) {        
+    final func setSearchUIElements(to color: UIColor, placeHolderText: String) {
         // using this to set the text color of the 'Cancel' button since the search bar ignores the global tint color property
         UISearchBar.appearance().tintColor = color
         
@@ -47,10 +47,11 @@ extension UISearchBar {
     }
 }
 
+/// Borrowed from -> https://forums.developer.apple.com/thread/85226
 extension UIView {
-    func getSubview<T>(type: T.Type) -> T? {
-        let svs = subviews.flatMap { $0.subviews }
-        let element = (svs.filter { $0 is T }).first
+    final func getSubview<T>(type: T.Type) -> T? {
+        let flattenedSubviews = subviews.flatMap { $0.subviews }
+        let element = (flattenedSubviews.filter { $0 is T }).first
         
         return element as? T
     }
