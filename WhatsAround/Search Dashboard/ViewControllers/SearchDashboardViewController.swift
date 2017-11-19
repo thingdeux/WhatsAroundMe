@@ -182,7 +182,7 @@ extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if Device.IS_5_5_INCHES_OR_LARGER() {
-            return -40.0
+            return -30.0
         }
         // Want a nice tight fit between cells
         return -14.0
