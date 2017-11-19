@@ -13,7 +13,7 @@
 ![screenshot](GithubAssets/6.png)
 
 
-[Demo](GithubAssets/Final-Optimized.gif)
+![](GithubAssets/Final-Optimized.gif)
 
 # Installation Notes
 
