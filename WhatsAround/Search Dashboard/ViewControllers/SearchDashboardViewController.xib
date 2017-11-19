@@ -53,7 +53,7 @@
                     <rect key="frame" x="8" y="52" width="359" height="56"/>
                     <color key="backgroundColor" name="PrimaryColor"/>
                     <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="alert"/>
+                    <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="light"/>
                 </searchBar>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Around You?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="ogs-V5-Guu" userLabel="InfoLabel">
                     <rect key="frame" x="74.666666666666686" y="392" width="227" height="27.666666666666686"/>

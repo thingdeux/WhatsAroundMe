@@ -34,15 +34,25 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-jz-CRu">
                     <rect key="frame" x="169" y="315" width="37" height="37"/>
                 </activityIndicatorView>
+                <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6n-dI-DqX" userLabel="Spacer">
+                    <rect key="frame" x="0.0" y="20" width="375" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="4nz-l0-RNU"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="8Ye-jz-CRu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O4V-hy-9aD"/>
+                <constraint firstItem="clI-b9-6tQ" firstAttribute="top" secondItem="K6n-dI-DqX" secondAttribute="top" id="YuA-wG-J8D"/>
+                <constraint firstAttribute="trailing" secondItem="K6n-dI-DqX" secondAttribute="trailing" id="ZaL-NB-a1V"/>
                 <constraint firstItem="8Ye-jz-CRu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mA8-Fh-xCx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="clI-b9-6tQ" secondAttribute="bottom" id="nEw-fo-qnJ"/>
-                <constraint firstItem="clI-b9-6tQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qIX-dP-G1f"/>
+                <constraint firstAttribute="bottom" secondItem="clI-b9-6tQ" secondAttribute="bottom" id="nEw-fo-qnJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="K6n-dI-DqX" secondAttribute="top" id="qIX-dP-G1f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="clI-b9-6tQ" secondAttribute="trailing" id="rAu-yw-FIB"/>
                 <constraint firstItem="clI-b9-6tQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ulq-qk-lsh"/>
+                <constraint firstItem="K6n-dI-DqX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y4l-4g-Y2b"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="26.5" y="51.5"/>

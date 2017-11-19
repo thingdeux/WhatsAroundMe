@@ -13,7 +13,7 @@
         <scene sceneID="Y5A-4e-5C8">
             <objects>
                 <navigationController id="gzG-Pa-SFN" customClass="BaseNavigationControllerViewController" customModule="WhatsAround" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h3Q-DP-ewY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="h3Q-DP-ewY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="PrimaryColor"/>

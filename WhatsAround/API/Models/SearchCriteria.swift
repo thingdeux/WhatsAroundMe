@@ -60,14 +60,3 @@ extension Float {
         }
     }
 }
-
-
-extension UIColor {
-    static var rankColor: UIColor {
-        return UIColor(named: "RankColor")!
-    }
-    
-    static var secondaryText: UIColor {
-        return UIColor(named: "SecondaryText")!
-    }
-}

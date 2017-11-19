@@ -14,10 +14,8 @@ class BaseNavigationControllerViewController: UINavigationController {
         super.viewDidLoad()
         self.isNavigationBarHidden = true
         self.navigationBar.prefersLargeTitles = false
-        // Set Navbar Color
-        self.navigationBar.barStyle = .black        
-        // Set Back Button Color
-        self.navigationBar.tintColor = UIColor(named: "PrimaryText")!
+        self.navigationBar.barStyle = .blackOpaque        
+        self.navigationBar.tintColor = UIColor.primaryText
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

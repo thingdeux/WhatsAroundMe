@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030368851FC2002F0003A465 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030368841FC2002F0003A465 /* UIColor+Extensions.swift */; };
+		030368881FC204CF0003A465 /* DeviceIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030368871FC204CF0003A465 /* DeviceIdentification.swift */; };
 		031248FB1FBE8ED100A65F82 /* SearchDashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031248FA1FBE8ED100A65F82 /* SearchDashboardModel.swift */; };
 		031249021FBE976500A65F82 /* SearchDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249011FBE976500A65F82 /* SearchDetailModel.swift */; };
 		031249051FBE978E00A65F82 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031249031FBE978E00A65F82 /* SearchDetailViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030368841FC2002F0003A465 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		030368871FC204CF0003A465 /* DeviceIdentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentification.swift; sourceTree = "<group>"; };
 		031248FA1FBE8ED100A65F82 /* SearchDashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDashboardModel.swift; sourceTree = "<group>"; };
 		031249011FBE976500A65F82 /* SearchDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailModel.swift; sourceTree = "<group>"; };
 		031249031FBE978E00A65F82 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030368861FC204B40003A465 /* Extensions and Utils */ = {
+			isa = PBXGroup;
+			children = (
+				030368841FC2002F0003A465 /* UIColor+Extensions.swift */,
+				031249161FBEC24D00A65F82 /* Misc+Extensions.swift */,
+				030368871FC204CF0003A465 /* DeviceIdentification.swift */,
+			);
+			path = "Extensions and Utils";
+			sourceTree = "<group>";
+		};
 		031249001FBE970200A65F82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +136,7 @@
 		031B5F4B1FBE716800480A6A /* WhatsAround */ = {
 			isa = PBXGroup;
 			children = (
+				030368861FC204B40003A465 /* Extensions and Utils */,
 				031B5F601FBE71BC00480A6A /* API */,
 				03DC23DE1FC175CC000A8C27 /* Detail Page */,
 				031B5F5E1FBE719800480A6A /* Search Dashboard */,
@@ -138,7 +153,6 @@
 		031B5F5E1FBE719800480A6A /* Search Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				031249161FBEC24D00A65F82 /* Misc+Extensions.swift */,
 				0312490D1FBEBCF400A65F82 /* CollectionViewCells */,
 				031249001FBE970200A65F82 /* Models */,
 				031B5F5F1FBE71B400480A6A /* ViewControllers */,
@@ -377,10 +391,12 @@
 				031249021FBE976500A65F82 /* SearchDetailModel.swift in Sources */,
 				031B5F681FBE74E600480A6A /* Location.swift in Sources */,
 				0312491B1FBEDA7C00A65F82 /* SearchCriteria.swift in Sources */,
+				030368851FC2002F0003A465 /* UIColor+Extensions.swift in Sources */,
 				031249091FBE9E5800A65F82 /* SearchDashboardViewController.swift in Sources */,
 				031249051FBE978E00A65F82 /* SearchDetailViewController.swift in Sources */,
 				03A550FF1FBFC46A0019CFA2 /* Review.swift in Sources */,
 				031249191FBED5E400A65F82 /* LocationService.swift in Sources */,
+				030368881FC204CF0003A465 /* DeviceIdentification.swift in Sources */,
 				03DC23D51FBFF859000A8C27 /* ScrollableImageContainerCollectionViewCell.swift in Sources */,
 				031B5F4D1FBE716800480A6A /* AppDelegate.swift in Sources */,
 				0312490C1FBEB37E00A65F82 /* BaseNavigationControllerViewController.swift in Sources */,

@@ -20,12 +20,12 @@
     - Core Location Management - properly synchronizing and handling the Core Location delegate and accounting for the fact that the user can turn
         it off at any time and the app has to react accordingly.
     - Various loading and failure states for things going wrong.
-    - Lots of UI considerations with these 2 screens [See below]
+    - Lots of UI considerations with these 2 screens between device dimensions [See below]
             
 * This test is heavy on UI but doesn't include explicit designs.  Things like spacing between elements, colors or assets.  I had to play a bit and find
     what feels right for each element as well as find an appropriate color pallette.  It's not technically difficult but is time-consuming - might recommend
-    more concrete designs / mocks if this is a trait you're not interested in testing. I would say the majority of this test was spent doing UI Polish and work
-    like this - which, again - may not be what you want? See below for timings.
+    more concrete designs / mocks if this is a trait you're not interested in testing. I would say the majority of this test was spent doing UI work and polish.
+    Not sure if that was intentional? May not be what you want? See below for timings.
             
 * At minimum, one would need 4 custom UICollectionViewCells (or Tableview cells) to create both views.  The elements are *just* different enough to rule
   out being able to use standard controls or re-use cells.  I chose to sligthly alter the design for the review cells so that I didn't need to create another UICollectionViewCell
@@ -38,11 +38,11 @@
 
 ## Time Breakdown
 
-* Total time for completing this code test (timed using Toggl) -> ~18 hours and 32 minutes
+* Total time for completing this code test (timed using Toggl) -> ~20 hours and 32 minutes
     - Yelp API Registration and Documentation Familiarization - ~45 Mins - 1 Hour
     - Creation of API Models and Consumers for Search / Businesses / Reviews - ~3 Hours and 33 mins
     - View Controller / Collection View (Cell) Architecture - ~5 Hours
-    - UI Polish and Tweaks - ~6 Hours
+    - UI Polish and Tweaks - ~8 Hours
     - Bug Squashing and QA - ~2 Hours
 
 

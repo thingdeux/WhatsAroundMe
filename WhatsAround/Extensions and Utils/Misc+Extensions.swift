@@ -20,37 +20,29 @@ extension UIViewController {
     } 
 }
 
-
 /*
     Apple is very much against changing default stylings on certain elements like UISearchBar.  Had to get a bit creative
     To make this fall inline with the design: Borrowed from -> https://forums.developer.apple.com/thread/85226
  */
 extension UISearchBar {
-    func setSearchUIElements(to color: UIColor) {        
-        let attributedString = NSAttributedString(string: "Search Nearby")
-        let textFieldPlaceHolder = self.value(forKey: "searchField") as? UITextField
-        textFieldPlaceHolder?.attributedPlaceholder = attributedString
-        textFieldPlaceHolder?.textColor = color
-        textFieldPlaceHolder?.tintColor = color
+    func setSearchUIElements(to color: UIColor, placeHolderText: String) {
+//        let attributedString = NSAttributedString(string: placeHolderText)
+//        let textFieldPlaceHolder = self.value(forKey: "searchField") as? UITextField
+//        textFieldPlaceHolder?.attributedPlaceholder = attributedString
+//        textFieldPlaceHolder?.textColor = color
+//        textFieldPlaceHolder?.tintColor = color
         
         // using this to set the text color of the 'Cancel' button since the search bar ignores the global tint color property
         UISearchBar.appearance().tintColor = color
         
         // Search bar placeholder text color
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: color])
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: [NSAttributedStringKey.foregroundColor: color])
         
         // Search bar text color
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: color]
         
         // Insertion cursor color
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = color
-        
-        // Search bar clear icon
-        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
-        let crossIconView = textFieldInsideSearchBar?.value(forKey: "clearButton") as? UIButton
-        crossIconView?.tintColor = color
-        
-        crossIconView?.setImage(crossIconView?.currentImage?.withRenderingMode(.alwaysTemplate), for: [.normal, .focused, .highlighted, .selected, .disabled])
         
         // Changes the tint color of the magnifying glass icon
         if let textFieldInsideSearchBar = self.getSubview(type: UITextField.self),

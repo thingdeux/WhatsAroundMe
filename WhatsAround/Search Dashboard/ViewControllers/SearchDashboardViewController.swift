@@ -27,7 +27,7 @@ class SearchDashboardViewController: UIViewController {
         super.viewDidLoad()
         self.setupUIAndDelegates()
         self.hideKeyboardWhenNotFocusedOnSearchBar()
-        self.searchBar.setSearchUIElements(to: UIColor(named: "PrimaryText")!)        
+        self.searchBar.setSearchUIElements(to: UIColor.primaryText, placeHolderText: "Search Nearby")
         
         // Capture self to prevent leaks
         self.model.setHandlers { [weak self] (updateType) in
@@ -42,9 +42,8 @@ class SearchDashboardViewController: UIViewController {
     private func setupUIAndDelegates() {
         self.collectionView.register(UINib(nibName: SearchResultCollectionViewCell.Constants.nibName, bundle: nil),
                                      forCellWithReuseIdentifier: SearchResultCollectionViewCell.Constants.reuseId)
-        
-        // Force unwrapping as this color is in the asset library and used widely throughout, it should crash if missing.
-        self.view.backgroundColor = UIColor(named: "PrimaryColor")!
+                
+        self.view.backgroundColor = UIColor.primaryColor
         self.navigationController?.isNavigationBarHidden = true
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -104,7 +103,7 @@ class SearchDashboardViewController: UIViewController {
                 // For this permission it's better to have a custom view explaining why you need this permission and prevent
                 // Actually having CoreLocation pop the permissions alert so that you can be sure the user will accept it when the time
                 // Comes and you don't have to guide them to settings.
-                // For this test I'm just providing an on-screen prompt.
+                // For this test I'm just providing an on-screen prompt for location permission denial.
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
@@ -171,11 +170,19 @@ extension SearchDashboardViewController : UICollectionViewDelegate {
 // MARK: CollectionView Flow Layout
 extension SearchDashboardViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screen = UIScreen.main.bounds        
+        let screen = UIScreen.main.bounds
+        
+        // Maintain 3 columns for smaller devices.
+        if Device.isSizeOrSmaller(.Inches_4) {
+            return CGSize(width: screen.width / 3.6, height: screen.height / 4.15)
+        }
         return CGSize(width: screen.width / 3.5, height: screen.height / 4.15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if Device.IS_5_5_INCHES_OR_LARGER() {
+            return -40.0
+        }
         // Want a nice tight fit between cells
         return -14.0
     }
