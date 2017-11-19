@@ -12,6 +12,10 @@ import Alamofire
 class YelpAPIService: APISearchProcessable {
     // TODO - Low Priority: I have a hard dependency on Alamofire here - if I've extra time I will split this out into an APICore protocol and allow for dependency injection
     // when making all of my API Calls.  Will make this testable.
+    init() {
+        assert(!YelpAPIService.Constants.authToken.isEmpty, "😬 You need a Yelp API AuthToken to continue.")
+    }
+    
     
     /// Search Yelp API for businesses near a given lat/long with additional search criteria.
     final func findNearbyBusinesses(_ criteria: SearchCriteria, apiQueue: DispatchQueue = DispatchQueue.global(), completionHandler: @escaping SearchResultsCompletionHandler) {
