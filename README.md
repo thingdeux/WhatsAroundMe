@@ -1,13 +1,16 @@
 #  Code Test
 
-[Launch Screen](GithubAssets/1.png)
-[Search - No Results](GithubAssets/2.png)
-[Search - Results](GithubAssets/3.png)
-[Search - No Results Found](GithubAssets/7.png)
-[Search - Location Permission Denied](GithubAssets/8.png)
-[Detail A](GithubAssets/4.png)
-[Detail B](GithubAssets/5.png)
-[Detail C - Remembered Position](GithubAssets/6.png)
+# Screenshots 
+![screenshot](GithubAssets/1.png)
+![screenshot](GithubAssets/2.png)
+![screenshot](GithubAssets/3.png)
+![screenshot](GithubAssets/7.png)
+![screenshot](GithubAssets/8.png)
+![screenshot](GithubAssets/4.png)
+![screenshot](GithubAssets/5.png)
+
+# Demo
+![screenshot](GithubAssets/6.png)
 
 
 [Demo](GithubAssets/Final-Optimized.gif)
